@@ -364,6 +364,61 @@
             
             .agentic-flow { flex-direction: column; gap: 1rem; }
             .flow-arrow { transform: rotate(90deg); }
+            
+            .services-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
+            .section-desc { font-size: 1rem; }
+            
+            .logo img { height: 65px; }
+            .logo-text { font-size: 1.5rem; }
+            .nav-scrolled .logo img { height: 55px; }
+            .nav-scrolled .logo-text { font-size: 1.3rem; }
+            
+            .service-card h3 { font-size: 1.3rem; }
+            
+            .contact-form-wrapper { padding: 1.5rem; }
+            .success-content { padding: 2rem; max-width: 90%; }
+            .success-content h3 { font-size: 1.5rem; }
+            .success-content p { font-size: 1rem; }
+            .success-icon { width: 60px; height: 60px; }
+            .success-icon svg { width: 30px; height: 30px; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero { padding-top: 7rem; padding-bottom: 3rem; }
+            .hero h1 { font-size: 2rem; line-height: 1.2; }
+            .hero p { font-size: 1rem; }
+            
+            .logo img { height: 55px; }
+            .logo-text { font-size: 1.3rem; }
+            
+            .section-title { font-size: 1.8rem; }
+            .section-tag { font-size: 0.7rem; padding: 0.3rem 0.8rem; }
+            
+            .service-card { padding: 1.5rem; }
+            .service-card h3 { font-size: 1.2rem; }
+            
+            .team-grid { grid-template-columns: 1fr; }
+            .team-card { max-width: 100%; }
+            
+            .mockup-content { grid-template-columns: 1fr; }
+            
+            .contact-container { gap: 2rem; }
+            .contact-form-wrapper { padding: 1.5rem; }
+            .contact-form input, 
+            .contact-form textarea, 
+            .contact-form select { padding: 0.9rem; font-size: 0.9rem; }
+            
+            .success-content { padding: 1.5rem; }
+            .success-content h3 { font-size: 1.3rem; }
+            .success-icon { width: 50px; height: 50px; }
+            .success-icon svg { width: 25px; height: 25px; }
         }
     </style>
 </head>
@@ -643,7 +698,7 @@
             
             <div class="contact-form-wrapper" style="background:rgba(255,255,255,0.03); padding:2.5rem; border-radius:20px; border:1px solid var(--border-light)">
                 <form class="contact-form" action="https://formspree.io/f/mldqejjl" method="POST">
-                    <!-- _next removed - using JavaScript redirect instead -->
+                    
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                     
                     <input type="text" name="fullname" placeholder="Full Name" required>
@@ -679,7 +734,6 @@
         <div>&copy; <span id="current-year"></span>  NaviMod  Financial  Analytics  Solutions.  All  rights  reserved.</div>
     </footer>
 
-    <!-- Success Modal -->
     <div class="success-modal" id="successModal">
         <div class="success-content">
             <div class="success-icon">
@@ -722,7 +776,7 @@
         
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+                e.preventDefault(); // Sayfa yenilemeyi engelle
                 
                 const formData = new FormData(this);
                 
@@ -734,18 +788,25 @@
                     }
                 }).then(response => {
                     if (response.ok) {
-                        // Show success modal
+                        // Modal'ı göster
                         successModal.classList.add('show');
+                        this.reset(); // Formu temizle
                         
-                        // Redirect after 3 seconds
+                        // 3 saniye sonra yönlendir/yenile
                         setTimeout(() => {
-                            window.location.href = 'https://navimod.com';
+                            window.location.href = 'https://navimod.com'; // veya window.location.reload();
                         }, 3000);
                     } else {
-                        alert('There was an error submitting the form. Please try again.');
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                                alert("Oops! There was a problem submitting your form");
+                            }
+                        });
                     }
                 }).catch(error => {
-                    alert('There was an error submitting the form. Please try again.');
+                    alert("Oops! There was a problem submitting your form");
                 });
             });
         }
