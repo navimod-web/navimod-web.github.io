@@ -113,11 +113,18 @@
         .hero-visual-container { position: relative; z-index: 5; display: flex; justify-content: center; padding-top: 0; }
 
         .dashboard-mockup {
-            width: 100%; max-width: 600px;
-            background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 1.5rem;
+            width: 100%;
+            max-width: 850px; /* Genişlik 600px'den 850px'e çıkarıldı */
+            background: rgba(15, 23, 42, 0.6); 
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 24px; 
+            padding: 1.5rem;
             box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
-            transform: perspective(1000px) rotateY(-5deg); transition: transform 0.5s ease;
+            /* Görsel %10 büyütüldü ve açısı korundu */
+            transform: perspective(1000px) rotateY(-5deg) scale(1.1); 
+            transition: transform 0.5s ease;
+            transform-origin: center right; /* Sağa yaslı büyümesi için */
         }
         .dashboard-mockup:hover { transform: perspective(1000px) rotateY(0deg); }
 
@@ -153,8 +160,21 @@
         .section-title { font-size: 2.8rem; margin-bottom: 1rem; color: white; }
         .section-desc { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; }
 
-        /* Services */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto; }
+        /* Services Grid Layout - 2x2 Fixed */
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; /* Default mobile: 1 column */
+            gap: 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        /* Tablet/Desktop: 2 columns strictly */
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
         
         .service-card {
             background: rgba(20, 30, 48, 0.4); border: 1px solid var(--border-light);
@@ -373,11 +393,13 @@
             .agentic-flow { flex-direction: column; gap: 1rem; }
             .flow-arrow { transform: rotate(90deg); }
             
-            .services-grid { grid-template-columns: 1fr; }
             .team-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
         }
         
         @media (max-width: 768px) {
+            /* On mobile, revert grid to 1 column implicitly via media query logic, 
+               but since default is 1fr, no extra override needed here unless specific tweaking. */
+
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
             .section-title { font-size: 2.2rem; }
@@ -428,7 +450,130 @@
             .success-icon { width: 50px; height: 50px; }
             .success-icon svg { width: 25px; height: 25px; }
         }
-    </style>
+
+    /* --- PREMIUM WHY SECTION (Enterprise Style) --- */
+        .why-section {
+            padding: 8rem 5%;
+            background: var(--bg-darker); /* Deep dark background */
+            position: relative;
+        }
+
+        .why-header-block {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem;
+        }
+
+        .why-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            margin-bottom: 1.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+      .why-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;  /* DEĞİŞTİ: 3rem yerine 2.8rem yapıldı */
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        .why-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary); /* #94A3B8 */
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 2x2 Grid Layout */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Desktop: 2 Sütun */
+            gap: 2.5rem; /* Geniş boşluk - Breathing room */
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.02); /* Mat koyu zemin */
+            border: 1px solid rgba(255, 255, 255, 0.06); /* Çok ince transparent border */
+            border-radius: 24px; /* Yumuşak köşeler */
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card:hover {
+            transform: translateY(-6px); /* Hafif yukarı kaldırma */
+            border-color: rgba(99, 102, 241, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 
+                        0 0 20px rgba(99, 102, 241, 0.1); /* Hafif glow */
+        }
+
+        /* Icon Styling - Muted Gradient Box */
+        .why-icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px; /* Soft square */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+        }
+
+        /* Gradient varyasyonları */
+        .icon-grad-1 { background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%); }
+        .icon-grad-2 { background: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%); }
+        .icon-grad-3 { background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); }
+        .icon-grad-4 { background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%); }
+
+        .why-icon-box svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 2;
+        }
+
+       .why-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem; /* DEĞİŞTİ: 1.4rem yerine 1.5rem yapıldı */
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+
+      .why-card p {
+            font-size: 1rem; /* DEĞİŞTİ: 0.95rem yerine 1rem yapıldı */
+            color: #94a3b8;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr; /* Mobile: 1 Column */
+                gap: 1.5rem;
+            }
+            .why-title { font-size: 2rem; }
+            .why-section { padding: 5rem 5%; }
+        }
+	</style>
 </head>
 <body>
 
@@ -438,6 +583,7 @@
             <span class="logo-text">NaviMod</span>
         </a>
         <ul class="nav-links">
+            <li><a href="#why-navimod">Why NaviMod</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#agentic">Agentic AI</a></li>
             <li><a href="#team">Team</a></li>
@@ -460,18 +606,18 @@
                 <strong>Agentic AI</strong> that thinks, adapts, and optimizes in real time powering smarter trading, dynamic portfolios, and continuous risk control.
             </p>
 
-            <div class="hero-stats" style="display:flex; gap:3rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
+             <div class="hero-stats" style="display:flex; gap:3rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
                 <div>
-                    <h4 style="font-size:1.8rem; margin-bottom:0;">10+</h4>
-                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">YEARS EXPERIENCE</span>
+                    <h4 style="font-size:1.8rem; margin-bottom:0;">20+</h4>
+                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">Years of Quant & AI Research</span>
                 </div>
                 <div>
                     <h4 style="font-size:1.8rem; margin-bottom:0;">36%</h4>
-                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">ALPHA GENERATED</span>
+                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">US Equity Alpha Generated</span>
                 </div>
                 <div>
                     <h4 style="font-size:1.8rem; margin-bottom:0;">200M+</h4>
-                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">DATA POINTS / DAY</span>
+                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">Data Points Processed Daily</span>
                 </div>
             </div>
         </div>
@@ -487,8 +633,11 @@
                     <div style="font-size:0.7rem; color:#64748b; font-family:monospace; text-transform:uppercase;">LIVE AGENT STATUS: ACTIVE</div>
                 </div>
                 <div class="mockup-content">
+                    
                     <div class="widget">
                         <div class="widget-title">RISK SCOUT AGENT <span style="color:#22c55e">●</span></div>
+                        <div style="font-size:0.65rem; color:#94a3b8; margin-bottom:0.5rem; line-height:1.2;">Volatility Regime Indicator</div>
+                        
                         <div class="widget-value">Low Volatility</div>
                         <div class="chart-line">
                              <svg viewBox="0 0 100 40" preserveAspectRatio="none">
@@ -497,8 +646,11 @@
                             </svg>
                         </div>
                     </div>
+
                     <div class="widget">
                         <div class="widget-title">PORTFOLIO AGENT <span style="color:#22c55e">●</span></div>
+                        <div style="font-size:0.65rem; color:#94a3b8; margin-bottom:0.5rem; line-height:1.2;">US Equity Strategy (Annualized Alpha)</div>
+                        
                         <div class="widget-value">+36% Alpha</div>
                         <div class="chart-bars">
                             <div class="bar" style="height:40%"></div>
@@ -508,6 +660,7 @@
                             <div class="bar" style="height:70%"></div>
                         </div>
                     </div>
+
                     <div class="widget full" style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
                          <div>
                              <div class="widget-title" style="margin:0">DECISION ENGINE</div>
@@ -532,51 +685,128 @@
             <img src="DB-logo.png" alt="Deutsche Bank" class="trusted-logo-img">
         </div>
     </div>
+<section class="why-section">
+        <section id="why-navimod" class="why-section">
+        <div class="why-header-block">
+            <span class="why-tag">Why Choose NaviMod?</span>
+            <h2 class="why-title">Purpose-Built Quant Technology for <br> Capital Allocation Teams</h2>
+            <p class="why-desc">
+                NaviMod delivers systematic, AI-driven intelligence to investment professionals focused on risk, returns, and execution quality. Our platform unifies quantitative research, autonomous model governance, and operational scalability.
+            </p>
+        </div>
 
+        <div class="why-grid">
+            
+            <div class="why-card">
+                <div class="why-icon-box icon-grad-1">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <h3>Significant, Repeatable Performance</h3>
+                <p>36% annualized US equity alpha, with enhanced returns when extended to leveraged ETFs and multi-asset universes.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon-box icon-grad-2">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3>Aligned With Your Mandate</h3>
+                <p>Flexible investment universes covering S&P 500, Shanghai, Nikkei, crypto instruments, leveraged products, and global ETFs.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon-box icon-grad-3">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                </div>
+                <h3>High-Dimensional AI Simplification</h3>
+                <p>Dynamic feature-selection architecture capable of processing thousands of variables and extracting only the most predictive signals.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon-box icon-grad-4">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h3>Integrated Risk & Performance Oversight</h3>
+                <p>Return targets achieved under strict risk parameters, supported by real-time exposure analytics, regime detection, and factor-based risk decomposition.</p>
+            </div>
+
+        </div>
+    </section>
     <section id="services">
         <div class="section-header">
             <span class="section-tag">Our Services</span>
             <h2 class="section-title">Financial Analytics Solutions</h2>
             <p class="section-desc">AI-powered solutions enabling autonomous, data-driven decision making across the entire investment lifecycle.</p>
         </div>
-        <div class="services-grid">
+        
+<div class="services-grid">
             
             <div class="service-card">
                 <div class="service-icon">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-6 6"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v18h18" />
+                        <path d="M18 7v6" /><rect x="16" y="9" width="4" height="2" />
+                        <path d="M12 10v7" /><rect x="10" y="12" width="4" height="3" />
+                        <path d="M6 14v4" /><rect x="4" y="15" width="4" height="2" />
+                    </svg>
+                </div>
+                <h3>AI-Based Stock Price Prediction</h3>
+                <p>AI-powered models generating short- and medium-term price direction forecasts across multi-asset markets. A dynamic prediction engine powered by deep learning and agentic reasoning.</p>
+                <ul class="service-list">
+                    <li>U.S. Equities (S&P 500, NASDAQ)</li>
+                    <li>Global ETFs, Crypto Assets, Commodities & Leveraged Assets</li>
+                    <li>Options-Implied Signal Generation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M8 12h2l2-4 2 8 2-4h2" />
+                    </svg>
                 </div>
                 <h3>Risk & Asset Intelligence</h3>
-                <p>AI-powered tools for real-time risk analysis and asset insights.</p>
+                <p>Advanced AI-driven tools delivering real-time risk diagnostics, asset behavior insights, and scenario-based resilience evaluation.</p>
                 <ul class="service-list">
-                    <li>VaR & CVaR</li>
-                    <li>Volatility Modeling</li>
-                    <li>Stress Testing</li>
+                    <li>VaR & CVaR Analytics</li>
+                    <li>Volatility Modeling & Regime Detection</li>
+                    <li>Stress Testing & Shock Scenarios</li>
                 </ul>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M22 12h-4"/><path d="M6 12H2"/><path d="M12 6V2"/><path d="M12 22v-4"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.21 15.89A10 10 0 118 2.83" />
+                        <path d="M22 12A10 10 0 0012 2v10z" />
+                    </svg>
                 </div>
                 <h3>Agentic Portfolio Optimization</h3>
-                <p>AI-driven methods for optimal allocation and dynamic portfolio management.</p>
+                <p>AI-enabled portfolio construction and dynamic rebalancing powered by agentic decision-making frameworks and quantitative optimization.</p>
                 <ul class="service-list">
-                    <li>Mean–Variance</li>
-                    <li>Black-Litterman</li>
-                    <li>ESG Integration</li>
+                    <li>Mean–Variance Optimization</li>
+                    <li>Black–Litterman Allocation Models</li>
+                    <li>ESG-Aware Portfolio Integration</li>
                 </ul>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                        <rect x="9" y="9" width="6" height="6" />
+                        <path d="M9 1l0 3" /><path d="M15 1l0 3" />
+                        <path d="M9 20l0 3" /><path d="M15 20l0 3" />
+                        <path d="M20 9l3 0" /><path d="M20 14l3 0" />
+                        <path d="M1 9l3 0" /><path d="M1 14l3 0" />
+                    </svg>
                 </div>
                 <h3>Autonomous Trading Systems</h3>
-                <p>AI-powered trading engines delivering adaptive and systematic strategies.</p>
+                <p>AI-powered trading engines executing adaptive, systematic, and multi-strategy trading workflows across global markets.</p>
                 <ul class="service-list">
-                    <li>Momentum & Mean Reversion</li>
-                    <li>Statistical Arbitrage</li>
-                    <li>Backtesting Engine</li>
+                    <li>Momentum & Mean Reversion Strategies</li>
+                    <li>Statistical Arbitrage Models</li>
+                    <li>Integrated Backtesting & Evaluation Engine</li>
                 </ul>
             </div>
 
