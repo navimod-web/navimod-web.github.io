@@ -248,6 +248,102 @@
         .contact-form button { width: 100%; padding: 1.2rem; background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition:0.3s; }
         .contact-form button:hover { opacity: 0.9; transform: translateY(-2px); }
 
+        /* Success Modal */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .success-modal.show {
+            display: flex;
+        }
+        
+        .success-content {
+            background: linear-gradient(135deg, rgba(20, 30, 48, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+            position: relative;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease 0.2s both;
+        }
+        
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 3;
+        }
+        
+        .success-content h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .success-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .success-redirect {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from { 
+                transform: scale(0);
+            }
+            to { 
+                transform: scale(1);
+            }
+        }
+
         footer { background: #02040a; padding: 5rem 5% 3rem; border-top: 1px solid var(--border-light); text-align: center; color: var(--text-muted); }
 
         /* Mobile Responsive */
@@ -534,7 +630,7 @@
                     
                     <div>
                         <strong style="color:white; display:block; margin-bottom:0.3rem">Email</strong>
-                        <span style="color:var(--text-secondary)">info@navimod.com</span>
+                        <span style="color:var(--text-secondary)"><a href="mailto:info@navimod.com" style="color:var(--primary-light); text-decoration:none;">info@navimod.com</a></span>
                     </div>
                     <div style="margin-top:1.5rem">
                         <strong style="color:white; display:block; margin-bottom:0.3rem">Social</strong>
@@ -547,8 +643,8 @@
             
             <div class="contact-form-wrapper" style="background:rgba(255,255,255,0.03); padding:2.5rem; border-radius:20px; border:1px solid var(--border-light)">
                 <form class="contact-form" action="https://formspree.io/f/mldqejjl" method="POST">
-                    <input type="hidden" name="_next" value="https://navimod.com">
-                    <input type="text" name="_gotcha" style="display:none">
+                    <!-- _next removed - using JavaScript redirect instead -->
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                     
                     <input type="text" name="fullname" placeholder="Full Name" required>
                     
@@ -583,6 +679,20 @@
         <div>&copy; <span id="current-year"></span>  NaviMod  Financial  Analytics  Solutions.  All  rights  reserved.</div>
     </footer>
 
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+            </div>
+            <h3>Request Received!</h3>
+            <p>Thank you for your interest. Our team will reach out to you within 24 hours to schedule your personalized demo.</p>
+            <div class="success-redirect">Redirecting to homepage...</div>
+        </div>
+    </div>
+
     <script>
         // Auto Update Year
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -596,12 +706,49 @@
             }
         });
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
+
+        // Handle form submission with success modal
+        const contactForm = document.querySelector('.contact-form');
+        const successModal = document.getElementById('successModal');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Show success modal
+                        successModal.classList.add('show');
+                        
+                        // Redirect after 3 seconds
+                        setTimeout(() => {
+                            window.location.href = 'https://navimod.com';
+                        }, 3000);
+                    } else {
+                        alert('There was an error submitting the form. Please try again.');
+                    }
+                }).catch(error => {
+                    alert('There was an error submitting the form. Please try again.');
+                });
+            });
+        }
     </script>
 </body>
-
 </html>
