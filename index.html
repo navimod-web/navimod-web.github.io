@@ -11,26 +11,37 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030812">
     
     <meta name="description" content="NaviMod provides an autonomous multi-layer AI framework for end-to-end fund management, featuring risk intelligence, agentic portfolio optimization, and autonomous trading systems powered by LLMs.">
-    <meta name="keywords" content="Agentic AI, Financial Analytics, Autonomous Finance, Algo Trading, Portfolio Optimization, Risk Management, Fintech, Artificial Intelligence, LLM, Quantitative Finance">
+    <meta name="keywords" content="Agentic AI, Financial Analytics, Autonomous Finance, Astera Finance, Intelligence Platform, Algo Trading, Portfolio Optimization, Risk Management, Fintech, Artificial Intelligence, LLM, Quantitative Finance">
     <meta name="author" content="NaviMod">
 
     <title>NaviMod | Agentic AI & Financial Analytics</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Color Palette */
-            --bg-dark: #050a14;
-            --bg-darker: #02040a;
-            --primary: #6366f1;
-            --primary-light: #818cf8;
-            --secondary: #06b6d4;
-            --accent: #a855f7;
+            /* Design tokens - single source of truth */
+            --bg-dark: #07101d;
+            --bg-darker: #02060d;
+            --primary: #5b7cfa;
+            --primary-light: #9aaaff;
+            --secondary: #67d7f3;
+            --accent: #9a6cff;
             --gradient-hero: radial-gradient(circle at top center, #1e1b4b 0%, #050a14 60%);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --border-light: rgba(255, 255, 255, 0.08);
+            --text-primary: #f4f7fb;
+            --text-secondary: #93a3ba;
+            --border-light: rgba(151, 180, 215, 0.10);
+            --surface: rgba(12, 23, 39, 0.72);
+            --surface-strong: rgba(13, 25, 43, 0.92);
+            --surface-soft: rgba(255, 255, 255, 0.028);
+            --text-muted: #7d8da4;
+            --border-cyan: rgba(103, 215, 243, 0.18);
+            --shadow-card: 0 26px 70px -36px rgba(0,0,0,.9);
+            --radius-xl: 26px;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --content-width: 1320px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -93,8 +104,6 @@
         }
 
         .orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: 0; pointer-events: none; }
-        .orb-1 { width: 600px; height: 600px; background: #4f46e5; top: -15%; right: -10%; }
-        .orb-2 { width: 500px; height: 500px; background: #a855f7; bottom: -10%; left: -10%; }
 
         .hero-content { z-index: 10; position: relative; max-width: 100%; }
         
@@ -103,7 +112,6 @@
             margin-bottom: 1.5rem; color: white;
             margin-top: 0;
         }
-        .hero h1 span { color: #818cf8; }
 
         .hero p {
             font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.6;
@@ -126,14 +134,11 @@
             transition: transform 0.5s ease;
             transform-origin: center right; /* Sağa yaslı büyümesi için */
         }
-        .dashboard-mockup:hover { transform: perspective(1000px) rotateY(0deg); }
 
         .mockup-header { display: flex; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-light); padding-bottom: 1rem; }
         .traffic-lights { display: flex; gap: 6px; }
         .traffic-lights span { width: 10px; height: 10px; border-radius: 50%; }
         .mockup-content { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        
-        .widget { background: rgba(255,255,255,0.03); border: 1px solid var(--border-light); border-radius: 12px; padding: 1rem; }
         .widget.full { grid-column: span 2; }
         .widget-title { font-size: 0.75rem; color: #818cf8; font-family: monospace; margin-bottom: 0.5rem; display: flex; justify-content: space-between; }
         .widget-value { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 1rem; }
@@ -152,7 +157,6 @@
             filter: brightness(0) invert(1); opacity: 0.7;
             transition: all 0.3s ease;
         }
-        .trusted-logo-img:hover { filter: none; opacity: 1; transform: scale(1.05); }
         
         section { padding: 8rem 5%; }
         .section-header { text-align: center; max-width: 900px; margin: 0 auto 4rem; } 
@@ -196,11 +200,6 @@
             margin-bottom: 2rem; color: var(--primary-light);
             box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
             transition: 0.4s;
-        }
-        .service-card:hover .service-icon {
-            background: var(--primary); color: white;
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
-            transform: scale(1.05);
         }
         .service-icon svg { width: 32px; height: 32px; }
 
@@ -248,8 +247,6 @@
         .flow-card:nth-of-type(3) svg { animation-delay: 0.6s; }
         .flow-card:nth-of-type(5) svg { animation-delay: 1.2s; }
         .flow-card:nth-of-type(7) svg { animation-delay: 1.8s; }
-        
-        .flow-card:hover { border-color: var(--accent); box-shadow: 0 0 30px rgba(168, 85, 247, 0.15); }
         .flow-arrow { color: var(--text-muted); opacity: 0.5; font-size: 1.5rem; align-self: center; }
 
         /* Team Section */
@@ -259,7 +256,6 @@
         .team-card { 
             flex: 0 1 320px; background: rgba(20, 30, 48, 0.4); border: 1px solid var(--border-light); border-radius: 20px; padding: 2.5rem 2rem; transition: 0.3s; text-align: center; 
         }
-        .team-card:hover { border-color: var(--border-light); background: rgba(255,255,255,0.06); }
         .team-img { width: 130px; height: 130px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 3px solid rgba(255,255,255,0.05); }
         .team-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
         .team-card h3 { font-size: 1.2rem; color: white; margin-bottom: 0.2rem; }
@@ -573,22 +569,691 @@
             .why-title { font-size: 2rem; }
             .why-section { padding: 5rem 5%; }
         }
-	</style>
+
+        /* --- ASTERA FINANCE PLATFORM SECTION --- */
+        .platform-section {
+            padding: 10rem 5%;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(120% 90% at 78% -10%, #10203c 0%, #081428 38%, #030812 72%, #02040a 100%);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .platform-section::before {
+            content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+            background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+            background-size: 26px 26px;
+            -webkit-mask-image: radial-gradient(70% 60% at 88% 6%, #000 0%, transparent 70%);
+            mask-image: radial-gradient(70% 60% at 88% 6%, #000 0%, transparent 70%);
+        }
+        .platform-arc {
+            position: absolute; width: 1200px; height: 1200px; border-radius: 50%;
+            top: -68%; right: -20%; z-index: 0; pointer-events: none;
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            box-shadow: 0 0 160px rgba(56, 189, 248, 0.22), inset 0 0 200px rgba(56, 189, 248, 0.10);
+        }
+        .platform-section .orb-cyan {
+            position: absolute; width: 760px; height: 760px; border-radius: 50%;
+            filter: blur(170px); opacity: 0.15; background: #06b6d4;
+            top: -18%; right: -14%; z-index: 0; pointer-events: none;
+        }
+
+        .platform-inner { max-width: 1240px; margin: 0 auto; position: relative; z-index: 2; }
+        .platform-grid { display: grid; grid-template-columns: 52fr 48fr; gap: 4.5rem; align-items: start; }
+
+        .platform-tagline { display: flex; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+        .platform-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 0.4rem 1rem; border-radius: 50px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.07);
+            color: var(--primary-light); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px;
+        }
+
+        .platform-title { font-family: 'Space Grotesk', sans-serif; line-height: 1.06; margin-bottom: 1.8rem; }
+        .platform-title .lead {
+            display: block; font-weight: 700; color: #f8fafc;
+        }
+        .platform-title .emphasis {
+            display: block; font-weight: 700;
+            background: linear-gradient(100deg, #7dd3fc 0%, #22d3ee 55%, #38bdf8 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .platform-features { list-style: none; padding: 0; margin: 0 0 3.2rem; }
+        .platform-feature { display: flex; gap: 1.4rem; align-items: flex-start; padding: 1.5rem 0; }
+        .platform-feature + .platform-feature { border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .platform-feature-icon {
+            width: 52px; height: 52px; flex-shrink: 0;
+            border-radius: 15px; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(150deg, rgba(6,182,212,0.14), rgba(6,182,212,0.03));
+            border: 1px solid rgba(6, 182, 212, 0.22);
+            color: #67e8f9; transition: 0.35s;
+        }
+        .platform-feature-icon svg { width: 22px; height: 22px; }
+        .platform-feature:hover .platform-feature-icon {
+            border-color: rgba(6, 182, 212, 0.55); color: #a5f3fc;
+            box-shadow: 0 0 26px -6px rgba(6, 182, 212, 0.55);
+        }
+        .platform-feature h4 { color: white; font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 700; letter-spacing: -0.2px; }
+        .platform-feature p { color: #94a3b8; font-size: 0.95rem; margin: 0; line-height: 1.55; max-width: 430px; }
+
+        .platform-cta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .platform-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 1.05rem 2.2rem; border-radius: 50px;
+            background: linear-gradient(100deg, #67e8f9, #22d3ee 60%, #06b6d4);
+            color: #02131a; font-weight: 700; font-size: 1rem; text-decoration: none;
+            transition: all 0.35s ease; box-shadow: 0 0 45px -8px rgba(34, 211, 238, 0.85);
+        }
+        .platform-btn:hover { transform: translateY(-2px); box-shadow: 0 0 60px -6px rgba(34, 211, 238, 1); }
+        .platform-btn svg { width: 17px; height: 17px; }
+
+        .platform-disclaimer {
+            margin-top: 3.2rem; font-size: 0.78rem; line-height: 1.7; color: #5b6b83;
+            max-width: 540px; border-left: 2px solid rgba(255,255,255,0.08); padding-left: 1.2rem;
+        }
+
+        .platform-visual { position: relative; }
+        .platform-visual::before {
+            content: ''; position: absolute; inset: -14% -10%; z-index: 0; pointer-events: none;
+            background: radial-gradient(circle at 60% 40%, rgba(34, 211, 238, 0.16), transparent 62%);
+            filter: blur(50px);
+        }
+        .platform-preview {
+            position: relative; z-index: 1;
+            background: linear-gradient(158deg, rgba(20, 36, 61, 0.88) 0%, rgba(8, 16, 30, 0.9) 100%);
+            backdrop-filter: blur(26px);
+            border: 1px solid rgba(125, 211, 252, 0.16);
+            border-radius: 28px; padding: 2.6rem 2.2rem;
+            box-shadow: 0 45px 100px -35px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+            transition: border-color 0.4s ease, transform 0.5s ease;
+        }
+        .platform-preview-header {
+            display: flex; justify-content: space-between; align-items: baseline;
+            border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 1.5rem; margin-bottom: 0.6rem;
+        }
+        .platform-preview-status { font-size: 0.68rem; color: #64748b; font-family: monospace; letter-spacing: 1.5px; text-transform: uppercase; }
+
+        .strategy-list { display: flex; flex-direction: column; }
+        .strategy-row { display: flex; align-items: center; gap: 1.5rem; padding: 1.15rem 0; }
+        .strategy-row + .strategy-row { border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .strategy-name { font-size: 0.98rem; color: #cbd5e1; width: 42%; flex-shrink: 0; transition: 0.3s; }
+        .strategy-row:hover .strategy-name { color: white; }
+        .strategy-track {
+            flex: 1; height: 10px; border-radius: 999px;
+            background: rgba(255,255,255,0.05); box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+        }
+        .strategy-fill { height: 100%; border-radius: 999px; transition: 0.4s; }
+        .strategy-row:hover .strategy-fill { filter: brightness(1.15); }
+        .strategy-score { font-family: monospace; font-size: 1.15rem; width: 44px; text-align: right; flex-shrink: 0; }
+
+        .strategy-legend {
+            display: flex; flex-wrap: wrap; gap: 1.8rem; align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.07); margin-top: 0.6rem; padding-top: 1.6rem;
+            font-size: 0.8rem; color: #94a3b8;
+        }
+        .strategy-legend span.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .strategy-foot {
+            border-top: 1px solid rgba(255,255,255,0.07); margin-top: 1.6rem; padding-top: 1.4rem;
+            font-size: 0.76rem; color: #5b6b83; line-height: 1.65;
+        }
+
+        @media (max-width: 1024px) {
+            .platform-section { padding: 6rem 5%; }
+            .platform-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+            .platform-title .lead, .platform-title .emphasis { font-size: 2.8rem; }
+            .platform-desc, .platform-feature p { max-width: 100%; }
+            .platform-preview { padding: 2rem 1.6rem; }
+            .platform-arc { width: 800px; height: 800px; top: -42%; right: -34%; }
+        }
+        @media (max-width: 768px) {
+            .platform-title .lead, .platform-title .emphasis { font-size: 2.3rem; }
+            .platform-desc { font-size: 1rem; }
+        }
+        @media (max-width: 480px) {
+            .platform-title .lead, .platform-title .emphasis { font-size: 1.95rem; }
+            .platform-btn { width: 100%; justify-content: center; }
+            .strategy-row { flex-wrap: wrap; gap: 0.55rem 1rem; padding: 0.95rem 0; }
+            .strategy-name { width: calc(100% - 60px); font-size: 0.9rem; }
+            .strategy-score { width: 44px; font-size: 1rem; }
+            .strategy-track { flex-basis: 100%; }
+        }
+
+        /* ============================================================
+           NAVIMOD 2026 — INSTITUTIONAL DESIGN SYSTEM OVERRIDES
+           Cohesive visual language across hero, product, services,
+           agentic framework, team and contact sections.
+           ============================================================ */
+        
+
+        html { background: var(--bg-darker); }
+        body {
+            background:
+                radial-gradient(900px 560px at 83% -10%, rgba(42, 108, 176, 0.10), transparent 70%),
+                var(--bg-darker);
+            color: var(--text-primary);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image: radial-gradient(rgba(255,255,255,.035) 0.7px, transparent 0.7px);
+            background-size: 28px 28px;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.45), transparent 60%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,.45), transparent 60%);
+        }
+        ::selection { background: rgba(103,215,243,.28); color: white; }
+
+        /* Navigation */
+        nav {
+            padding: .72rem clamp(1.25rem, 5vw, 5rem);
+            min-height: 76px;
+            background: rgba(3, 8, 18, .72);
+            backdrop-filter: blur(22px) saturate(125%);
+            -webkit-backdrop-filter: blur(22px) saturate(125%);
+            border-bottom: 1px solid rgba(255,255,255,.055);
+        }
+        .nav-scrolled {
+            padding: .55rem clamp(1.25rem, 5vw, 5rem);
+            background: rgba(2, 6, 13, .94);
+            box-shadow: 0 16px 40px -30px rgba(0,0,0,.95);
+        }
+        .logo { gap: 11px; }
+        .logo img,
+        .nav-scrolled .logo img { height: 50px; filter: drop-shadow(0 0 16px rgba(103,215,243,.12)); }
+        .logo-text,
+        .nav-scrolled .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.45rem;
+            letter-spacing: -.055em;
+            font-weight: 650;
+            background: none;
+            -webkit-text-fill-color: #f7fafc;
+            color: #f7fafc;
+        }
+        .nav-links { gap: clamp(1.2rem, 2vw, 2.25rem); align-items: center; }
+        .nav-links a { color: #91a0b6; font-size: .92rem; font-weight: 500; }
+        .nav-links a::after { height: 1px; bottom: -8px; background: #67d7f3; }
+        .nav-actions { display: flex; align-items: center; }
+
+        /* Shared section rhythm */
+        section { padding: 7rem clamp(1.25rem, 5vw, 5rem); }
+        .section-header { max-width: 820px; margin-bottom: 4.5rem; }
+        .section-tag, .why-tag {
+            padding: .42rem .88rem;
+            border-radius: 999px;
+            background: rgba(103,215,243,.065);
+            border: 1px solid rgba(103,215,243,.16);
+            color: #8ce8fb;
+            font-size: .72rem;
+            letter-spacing: .13em;
+            font-weight: 700;
+        }
+        .section-title, .why-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.25rem, 3vw, 3.15rem);
+            line-height: 1.08;
+            letter-spacing: -.045em;
+            font-weight: 600;
+            color: #f6f8fb;
+        }
+        .section-desc, .why-desc { color: #8ea0b7; line-height: 1.75; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            grid-template-columns: minmax(0, 1.03fr) minmax(520px, .97fr);
+            align-items: center;
+            gap: clamp(3rem, 6vw, 6.5rem);
+            padding: 9.5rem clamp(1.25rem, 5vw, 5rem) 5.5rem;
+            background:
+                radial-gradient(780px 590px at 79% 20%, rgba(19, 95, 153, .17), transparent 67%),
+                radial-gradient(620px 460px at 23% 12%, rgba(91,124,250,.09), transparent 66%),
+                linear-gradient(180deg, #050a13 0%, #02060d 100%);
+            isolation: isolate;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 940px; height: 940px;
+            border: 1px solid rgba(103,215,243,.13);
+            border-radius: 50%;
+            top: -510px; right: -220px;
+            box-shadow: 0 0 130px rgba(103,215,243,.07), inset 0 0 120px rgba(103,215,243,.035);
+            z-index: 0; pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; inset: 0; pointer-events: none; z-index: 0;
+            background-image: radial-gradient(rgba(103,215,243,.16) .7px, transparent .7px);
+            background-size: 25px 25px;
+            -webkit-mask-image: radial-gradient(38% 46% at 96% 30%, #000 0%, transparent 76%);
+            mask-image: radial-gradient(38% 46% at 96% 30%, #000 0%, transparent 76%);
+            opacity: .55;
+        }
+        .orb { opacity: .13; filter: blur(150px); }
+        .orb-1 { width: 560px; height: 560px; background: #1c7aa7; top: 6%; right: -9%; }
+        .orb-2 { width: 460px; height: 460px; background: #5d45b3; bottom: -24%; left: -12%; }
+        .hero-content { max-width: 700px; }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 4.6vw, 4.8rem);
+            font-weight: 700;
+            line-height: .93;
+            letter-spacing: -.045em;
+            margin: 0 0 1.75rem;
+            max-width: 760px;
+        }
+        .hero h1 span {
+            display: block;
+            line-height: 1.08;
+            padding-bottom: .06em;
+            margin-top: .08em;
+            color: transparent;
+            background: linear-gradient(100deg, #8be6f7 0%, #67d7f3 36%, #8a9cff 78%, #aa86ff 100%);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p.hero-lede {
+            margin: 0 0 2.2rem;
+            max-width: 620px;
+            font-size: 1.12rem;
+            line-height: 1.78;
+            color: #99a9bf;
+        }
+        .hero p.hero-lede strong { color: #eef5fb; font-weight: 600; }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 0;
+            border-top: 1px solid rgba(151,180,215,.10);
+            padding-top: 1.45rem;
+            max-width: 630px;
+        }
+        .hero-stat { padding-right: 1.15rem; }
+        .hero-stat + .hero-stat { border-left: 1px solid rgba(151,180,215,.08); padding-left: 1.3rem; }
+        .hero-stat h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1.45rem; font-weight: 600; margin: 0 0 .28rem; color: #f5f8fb; }
+        .hero-stat span { display: block; color: #63758d; font-size: .69rem; line-height: 1.45; letter-spacing: .08em; text-transform: uppercase; }
+
+        /* Hero intelligence console */
+        .hero-visual-container { padding: 0; align-items: center; }
+        .dashboard-mockup {
+            max-width: 710px;
+            padding: 1.45rem;
+            border-radius: 28px;
+            background: linear-gradient(155deg, rgba(16,31,51,.88), rgba(7,14,26,.92));
+            border: 1px solid rgba(125,211,252,.16);
+            box-shadow: 0 48px 110px -46px rgba(0,0,0,.96), inset 0 1px 0 rgba(255,255,255,.055);
+            transform: none;
+            overflow: hidden;
+        }
+        .dashboard-mockup::before {
+            content: '';
+            position: absolute; inset: -40% 35% auto -20%; height: 420px;
+            background: radial-gradient(circle, rgba(103,215,243,.11), transparent 64%);
+            pointer-events: none;
+        }
+        .dashboard-mockup:hover { transform: translateY(-4px); }
+        .mockup-header {
+            position: relative; z-index: 1;
+            align-items: center;
+            margin-bottom: 1.15rem;
+            padding-bottom: 1.05rem;
+            border-bottom: 1px solid rgba(151,180,215,.09);
+        }
+        .console-brand { color: #f4f7fb; font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -.025em; }
+        .console-brand span { color: #8b9ab0; margin-left: .4rem; font-size: .76rem; font-family: 'Plus Jakarta Sans',sans-serif; font-weight: 500; letter-spacing: .02em; }
+        .console-status { display:flex; align-items:center; gap:7px; color:#7dd3a8; font-family:monospace; font-size:.66rem; letter-spacing:.11em; }
+        .console-status span { width:7px; height:7px; border-radius:50%; background:#48d597; box-shadow:0 0 12px rgba(72,213,151,.7); }
+        .mockup-content { position:relative; z-index:1; gap:.85rem; }
+        .widget {
+            padding: 1.15rem;
+            background: rgba(255,255,255,.026);
+            border: 1px solid rgba(151,180,215,.085);
+            border-radius: 16px;
+            transition: .3s ease;
+        }
+        .widget:hover { background: rgba(255,255,255,.038); border-color: rgba(103,215,243,.17); }
+        .widget-title { margin-bottom: .65rem; color: #8ea1b8; font-family: 'Plus Jakarta Sans',sans-serif; font-size: .64rem; font-weight:700; letter-spacing:.1em; }
+        .status-dot { color:#48d597; font-size:.66rem; }
+        .widget-caption { color:#8291a8; font-size:.68rem; margin-bottom:.45rem; line-height:1.35; }
+        .widget-value { font-family:'Space Grotesk',sans-serif; font-size:1.18rem; font-weight:600; margin-bottom:.9rem; }
+        .chart-bars { height: 54px; gap: 6px; }
+        .bar { background: linear-gradient(to top, rgba(91,124,250,.45), rgba(138,156,255,.9)); border-radius:4px 4px 2px 2px; opacity:.75; }
+        .bar.active { background: linear-gradient(to top, rgba(103,215,243,.55), #8ce8fb); box-shadow:0 0 18px rgba(103,215,243,.16); }
+        .market-widget { display:flex; justify-content:space-between; align-items:center; margin-top:0; text-decoration:none; cursor:pointer; }
+        .market-caption { margin:0; }
+        .market-link { color:#8ce8fb; font-family:monospace; font-size:.68rem; letter-spacing:.08em; padding:.46rem .7rem; border-radius:999px; border:1px solid rgba(103,215,243,.16); background:rgba(103,215,243,.055); }
+        .market-link span { margin-left:3px; }
+        .console-foot { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:.55rem; margin-top:.85rem; padding-top:.9rem; border-top:1px solid rgba(151,180,215,.075); }
+        .console-foot span { color:#7d8da4; font-size:.63rem; letter-spacing:.075em; text-transform:uppercase; }
+        .console-foot span + span::before { content:'•'; margin-right:.55rem; color:#33435a; }
+
+        /* Trusted strip */
+        .trusted {
+            padding: 2.7rem clamp(1.25rem,5vw,5rem);
+            background: linear-gradient(180deg, rgba(255,255,255,.012), rgba(255,255,255,.005));
+            border-color: rgba(151,180,215,.075);
+        }
+        .trusted .section-header { margin-bottom: 1.7rem; }
+        .trusted .section-header span { color:#8493aa; letter-spacing:.15em; font-size:.68rem; }
+        .trusted-logos { max-width: 1180px; margin: 0 auto; gap: clamp(2.5rem,5vw,5rem); }
+        .trusted-logo-img { height: 36px; opacity:.48; filter: grayscale(1) brightness(0) invert(1); }
+        .trusted-logo-img:hover { opacity:.92; filter: grayscale(1) brightness(0) invert(1); transform:none; }
+
+        /* Why / Services */
+        .why-section { padding: 7.5rem clamp(1.25rem,5vw,5rem); background: #02060d; }
+        .why-header-block { margin-bottom: 4.25rem; }
+        .why-grid, .services-grid { max-width: 1180px; gap: 1.25rem; }
+        .why-card, .service-card {
+            background: linear-gradient(150deg, rgba(255,255,255,.034), rgba(255,255,255,.014));
+            border: 1px solid rgba(151,180,215,.085);
+            border-radius: 22px;
+            box-shadow: var(--shadow-card);
+        }
+        .why-card { padding: 2.25rem; }
+        .service-card { padding: 2.35rem; }
+        .why-card:hover, .service-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(103,215,243,.19);
+            background: linear-gradient(150deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+            box-shadow: 0 30px 70px -42px rgba(0,0,0,.95);
+        }
+        .why-icon-box, .service-icon {
+            width: 52px; height: 52px; border-radius: 15px; margin-bottom: 1.55rem;
+            background: linear-gradient(145deg, rgba(103,215,243,.10), rgba(91,124,250,.07));
+            color: #80def2; border: 1px solid rgba(103,215,243,.13);
+            box-shadow:none;
+        }
+        .icon-grad-1,.icon-grad-2,.icon-grad-3,.icon-grad-4 { background: linear-gradient(145deg, rgba(103,215,243,.10), rgba(91,124,250,.07)); }
+        .why-icon-box svg, .service-icon svg { width: 25px; height:25px; stroke-width:1.7; }
+        .service-card:hover .service-icon { background:rgba(103,215,243,.1); color:#9cecff; box-shadow:none; transform:none; }
+        .why-card h3, .service-card h3 { font-size:1.28rem; letter-spacing:-.025em; margin-bottom:.72rem; font-weight:600; }
+        .why-card p, .service-card p { color:#8798ae; font-size:.94rem; line-height:1.72; }
+        .service-card p { margin-bottom: 1.65rem; }
+        .service-list { border-top:1px solid rgba(151,180,215,.075); padding-top:1.25rem; gap:.65rem; margin-top:auto; }
+        .service-list li { color:#b9c5d3; font-size:.86rem; font-weight:500; }
+        .service-list li::before { width:5px; height:5px; background:#67d7f3; box-shadow:none; opacity:.8; }
+
+        /* Astera platform section */
+        .platform-section {
+            padding: 8.5rem clamp(1.25rem,5vw,5rem);
+            background:
+                radial-gradient(1100px 700px at 88% -7%, rgba(42,112,170,.19), transparent 60%),
+                linear-gradient(180deg, #06101d 0%, #030812 72%, #02060d 100%);
+            border-color: rgba(151,180,215,.075);
+        }
+        .platform-inner { max-width: var(--content-width); }
+        .platform-grid { grid-template-columns: minmax(0, .98fr) minmax(500px, 1.02fr); gap: clamp(3rem,5vw,5rem); align-items:start; }
+        .platform-tagline { margin-bottom:1.65rem; }
+        /* card top lines up with the headline, not with the tag row */
+        .platform-visual { padding-top: 3.6rem; }
+        .platform-badge { color:#aeb9ff; border-color:rgba(125,139,255,.18); background:rgba(91,124,250,.055); }
+        .platform-title { margin-bottom:1.45rem; }
+        .platform-title .lead, .platform-title .emphasis { font-size:clamp(2.6rem,3.4vw,3.7rem); line-height:1.05; letter-spacing:-.045em; }
+        .platform-title .emphasis { margin-top:.04em; line-height:1.14; padding-bottom:.06em; background:linear-gradient(100deg,#8ce8fb 0%,#67d7f3 47%,#8a9cff 100%); -webkit-background-clip:text; background-clip:text; }
+        .platform-desc { max-width:620px; font-size:1.03rem; line-height:1.78; margin-bottom:2.35rem; color:#98a9bf; }
+        .platform-features { margin-bottom:2.45rem; }
+        .platform-feature { gap:1.1rem; padding:1.12rem 0; }
+        .platform-feature + .platform-feature { border-color:rgba(151,180,215,.07); }
+        .platform-feature-icon { width:46px; height:46px; border-radius:13px; background:rgba(103,215,243,.055); border-color:rgba(103,215,243,.15); color:#83e3f7; }
+        .platform-feature h4 { font-size:1rem; font-weight:600; margin-bottom:.25rem; }
+        .platform-feature p { max-width:500px; color:#8293a9; font-size:.89rem; line-height:1.58; }
+        .platform-cta { gap:.75rem; }
+        .platform-btn { padding:.86rem 1.3rem; font-size:.9rem; min-height:48px; }
+        .platform-btn { background:linear-gradient(105deg,#8ce8fb,#67d7f3 57%,#6ebcf2); box-shadow:0 16px 38px -20px rgba(103,215,243,.95); }
+        .platform-disclaimer { margin-top:2.25rem; max-width:610px; color:#7b8aa1; border-left-color:rgba(103,215,243,.13); }
+        .platform-preview { padding:2.2rem 2rem; border-radius:26px; background:linear-gradient(155deg, rgba(16,32,53,.9), rgba(7,15,28,.94)); border-color:rgba(125,211,252,.16); box-shadow:0 48px 110px -46px rgba(0,0,0,.96), inset 0 1px 0 rgba(255,255,255,.055); }
+        .platform-preview:hover { transform:translateY(-4px); border-color:rgba(125,211,252,.27); }
+        .platform-preview-status { font-size:.64rem; color:#8291a8; }
+        .strategy-row { gap:1.2rem; padding:1.03rem 0; }
+        .strategy-name { width:39%; font-size:.9rem; color:#bac6d4; }
+        .strategy-track { height:8px; background:rgba(255,255,255,.055); }
+        .strategy-fill.low { background:linear-gradient(90deg,#67d7f3,#8ce8fb); box-shadow:0 0 14px rgba(103,215,243,.28); }
+        .strategy-fill.mid { background:linear-gradient(90deg,#697cf5,#8a9cff); box-shadow:0 0 14px rgba(105,124,245,.22); }
+        .strategy-fill.high { background:linear-gradient(90deg,#9866ef,#ba87ff); box-shadow:0 0 14px rgba(152,102,239,.24); }
+        .strategy-score { font-size:1rem; }
+        .strategy-score.low { color:#8ce8fb; } .strategy-score.mid{color:#a7b2ff;} .strategy-score.high{color:#caa4ff;}
+        .strategy-legend { border-color:rgba(151,180,215,.08); gap:1.35rem; font-size:.74rem; }
+        .strategy-foot { border-color:rgba(151,180,215,.08); color:#5d6f86; }
+
+        /* Agentic AI */
+        .agentic-section {
+            background:
+                radial-gradient(700px 360px at 50% 12%, rgba(112,72,190,.09), transparent 70%),
+                #02060d;
+        }
+        .agentic-section .section-header { margin-bottom:3.5rem; }
+        .agentic-cta { margin-top: 2rem; text-align: center; }
+        .agentic-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #c0a6ff; font-size: .9rem; font-weight: 600; text-decoration: none;
+            padding: .72rem 1.15rem; border: 1px solid rgba(154,108,255,.18);
+            border-radius: 999px; background: rgba(154,108,255,.04); transition: all .3s ease;
+        }
+        .agentic-link svg { width: 18px; height: 18px; transition: transform .3s ease; }
+        .agentic-link:hover { background: rgba(154,108,255,.1); border-color: rgba(154,108,255,.4); }
+        .agentic-link:hover svg { transform: translateX(3px); }
+        .agentic-flow {
+            display:grid;
+            grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
+            gap:1rem;
+            max-width:1180px;
+            margin:0 auto;
+            align-items:center;
+        }
+        .flow-card {
+            min-width:0;
+            padding:2rem 1.25rem;
+            background:linear-gradient(150deg,rgba(255,255,255,.032),rgba(255,255,255,.012));
+            border:1px solid rgba(151,180,215,.085);
+            border-radius:20px;
+        }
+        .flow-card svg { color:#a482f2; width:32px; height:32px; animation:none; margin-bottom:.85rem; }
+        .flow-card span { font-size:.92rem; color:#d7deea; font-weight:600; }
+        .flow-card:hover { border-color:rgba(154,108,255,.2); box-shadow:none; transform:translateY(-3px); }
+        .flow-arrow { color:#3c4c61; opacity:1; font-size:1rem; }
+
+        /* Team */
+        #team { background:linear-gradient(180deg,#02060d,#040913); }
+        .team-grid { max-width:1180px; gap:1.15rem; }
+        .team-card {
+            flex:1 1 300px;
+            max-width:370px;
+            padding:2rem 1.6rem;
+            background:linear-gradient(150deg,rgba(255,255,255,.03),rgba(255,255,255,.012));
+            border:1px solid rgba(151,180,215,.08);
+            border-radius:20px;
+        }
+        .team-card:hover { border-color:rgba(103,215,243,.15); background:rgba(255,255,255,.03); transform:translateY(-3px); }
+        .team-img { width:104px; height:104px; border:1px solid rgba(103,215,243,.15); box-shadow:0 0 0 5px rgba(103,215,243,.025); }
+        .team-card h3 { font-size:1.05rem; font-weight:600; letter-spacing:-.02em; }
+        .team-role { color:#8ce8fb; font-size:.76rem; letter-spacing:.02em; }
+        .team-desc { color:#7f90a6; font-size:.8rem; line-height:1.65; }
+
+        /* Contact */
+        #contact { background:radial-gradient(700px 400px at 12% 0%,rgba(42,112,170,.10),transparent 70%),#06101b; }
+        .contact-container { max-width:1180px; gap:4rem; align-items:start; }
+        #contact .section-title { font-size:clamp(2.2rem,3vw,3rem); line-height:1.12; letter-spacing:-.04em; }
+        .contact-info strong { font-size:.82rem; color:#dfe8f2; }
+        .contact-info span, .contact-info a { font-size:.9rem; }
+        .contact-form-wrapper {
+            background:linear-gradient(155deg,rgba(255,255,255,.038),rgba(255,255,255,.016));
+            padding:2rem;
+            border-radius:22px;
+            border:1px solid rgba(151,180,215,.10);
+            box-shadow:var(--shadow-card);
+        }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            padding:1rem 1.05rem;
+            background:rgba(2,8,16,.72);
+            border:1px solid rgba(151,180,215,.10);
+            border-radius:12px;
+            color:#eef4fa;
+            font-size:.9rem;
+            transition:.25s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border-color:rgba(103,215,243,.35);
+            box-shadow:0 0 0 3px rgba(103,215,243,.055);
+        }
+        .contact-form button {
+            padding:1rem;
+            border-radius:999px;
+            background:linear-gradient(105deg,#8ce8fb,#67d7f3 58%,#6ebcf2);
+            color:#04131a;
+            font-size:.92rem;
+            box-shadow:0 16px 38px -22px rgba(103,215,243,.95);
+        }
+
+        /* Footer / modal */
+        footer { padding:3.5rem 5% 2.5rem; background:#02060d; border-color:rgba(151,180,215,.075); color:#526278; font-size:.78rem; }
+        .footer-logo { margin-bottom: 1.5rem; display: flex; justify-content: center; }
+        footer img { height:52px; opacity:.75; }
+        .success-content { border-color:rgba(103,215,243,.18); background:linear-gradient(155deg,rgba(14,29,48,.98),rgba(6,14,26,.98)); }
+        .success-icon { background:linear-gradient(135deg,#67d7f3,#7d8cff); }
+
+        /* Accessibility + motion */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline:2px solid #8ce8fb; outline-offset:3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1180px) {
+            .nav-links { gap:1rem; }
+            .nav-links a { font-size:.84rem; }
+            .hero { grid-template-columns:1fr 1fr; gap:3rem; }
+            .hero h1 { font-size:clamp(3rem,4.4vw,4.2rem); }
+            .platform-grid { grid-template-columns:1fr 1fr; gap:3rem; }
+        }
+        @media (max-width: 1024px) {
+            nav { min-height:68px; }
+            .nav-links { display:none; }
+            .logo img,.nav-scrolled .logo img { height:45px; }
+            .hero { grid-template-columns:1fr; text-align:left; padding-top:8.5rem; gap:4rem; }
+            .hero-content { margin:0; max-width:760px; }
+            .hero-visual-container { width:100%; justify-content:flex-start; }
+            .dashboard-mockup { max-width:760px; }
+            .platform-grid { grid-template-columns:1fr; }
+            .platform-visual { padding-top: 0; }
+            .platform-content { max-width:760px; }
+            .platform-preview { max-width:760px; }
+            .agentic-flow { grid-template-columns:1fr; max-width:620px; }
+            .flow-arrow { transform:rotate(90deg); justify-self:center; }
+            .contact-container { grid-template-columns:1fr; max-width:760px; }
+        }
+        @media (max-width: 768px) {
+            nav { padding:.55rem 1.1rem; }
+            .nav-scrolled { padding:.45rem 1.1rem; }
+            .logo-text,.nav-scrolled .logo-text { font-size:1.25rem; }
+            .hero { padding:7.8rem 1.25rem 4.5rem; }
+            .hero h1 { font-size:clamp(2.5rem,11vw,3.5rem); }
+            .hero p.hero-lede { font-size:1rem; }
+            .hero-stats { grid-template-columns:1fr; }
+            .hero-stat { padding:.8rem 0; }
+            .hero-stat + .hero-stat { border-left:0; border-top:1px solid rgba(151,180,215,.08); }
+            .mockup-content { grid-template-columns:1fr; }
+            .widget.full { grid-column:span 1; }
+            .platform-section, .why-section, section { padding-left:1.25rem; padding-right:1.25rem; }
+            .platform-title .lead,.platform-title .emphasis { font-size:clamp(2.1rem,10vw,3rem); }
+            .strategy-name { width:42%; }
+            .team-card { max-width:none; }
+        }
+        @media (max-width: 520px) {
+            .dashboard-mockup { padding:1rem; border-radius:20px; }
+            .console-brand span { display:none; }
+            .market-widget { align-items:flex-start; gap:1rem; flex-direction:column; }
+            .platform-preview { padding:1.45rem 1.15rem; border-radius:20px; }
+            .platform-preview-header { gap:1rem; }
+            .platform-preview-status { text-align:right; }
+            .strategy-row { display:grid; grid-template-columns:1fr auto; gap:.65rem; }
+            .strategy-name { width:auto; }
+            .strategy-score { width:auto; }
+            .strategy-track { grid-column:1 / -1; grid-row:2; }
+            .platform-btn { width:100%; }
+            .contact-form-wrapper { padding:1.25rem; }
+        }
+
+        /* Mobile menu */
+        .nav-actions { gap: .6rem; }
+        .nav-toggle {
+            display: none; width: 42px; height: 42px; padding: 0;
+            flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+            background: rgba(255,255,255,.03); border: 1px solid rgba(151,180,215,.14);
+            border-radius: 12px; cursor: pointer; transition: .3s ease;
+        }
+        .nav-toggle:hover { border-color: rgba(103,215,243,.4); }
+        .nav-toggle span {
+            display: block; width: 17px; height: 1.5px; border-radius: 2px;
+            background: #cfdae8; transition: transform .3s ease, opacity .2s ease;
+        }
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        @media (max-width: 1024px) {
+            .nav-toggle { display: flex; }
+            nav { flex-wrap: wrap; }
+            .nav-links {
+                display: flex; flex-direction: column; align-items: flex-start;
+                flex-basis: 100%; gap: 0; overflow: hidden;
+                max-height: 0; opacity: 0; visibility: hidden;
+                transition: max-height .38s ease, opacity .28s ease, visibility .28s;
+            }
+            .nav-links.is-open {
+                max-height: 420px; opacity: 1; visibility: visible;
+                margin-top: .9rem; padding-bottom: .6rem;
+                border-top: 1px solid rgba(151,180,215,.1);
+            }
+            .nav-links li { width: 100%; }
+            .nav-links a {
+                display: block; width: 100%; padding: .95rem .2rem; font-size: 1rem;
+                border-bottom: 1px solid rgba(151,180,215,.07);
+            }
+            .nav-links a::after { display: none; }
+        }
+
+        /* Astera lockup */
+        .astera-lockup { display: flex; align-items: center; gap: .7rem; }
+        .astera-mark { height: 36px; width: auto; flex-shrink: 0; filter: drop-shadow(0 0 14px rgba(103,215,243,.28)); }
+        .astera-word {
+            font-family: 'Space Grotesk', sans-serif; font-size: 1.45rem; font-weight: 600;
+            color: #f4f7fb; letter-spacing: -.045em; line-height: 1;
+        }
+        @media (max-width: 520px) {
+            .astera-mark { height: 31px; }
+            .astera-word { font-size: 1.2rem; }
+        }
+</style>
 </head>
 <body>
 
     <nav id="navbar">
-        <a href="#" class="logo">
+        <a href="#" class="logo" aria-label="NaviMod home">
             <img src="navimod-logo.png" alt="NaviMod">
             <span class="logo-text">NaviMod</span>
         </a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="#why-navimod">Why NaviMod</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">Solutions</a></li>
+            <li><a href="#platform">Platform</a></li>
             <li><a href="#agentic">Agentic AI</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-actions">
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
     <section class="hero">
@@ -596,28 +1261,29 @@
         <div class="orb orb-2"></div>
 
         <div class="hero-content">
+
             <h1>
-                Autonomous <br>
-                Finance <br>
-                <span style="color: #818cf8;">with Agentic AI</span>
+                Autonomous Finance
+                <span>with Agentic AI</span>
             </h1>
-            
-            <p>
-                <strong>Agentic AI</strong> that thinks, adapts, and optimizes in real time powering smarter trading, dynamic portfolios, and continuous risk control.
+
+            <p class="hero-lede">
+                <strong>Agentic AI</strong> that thinks, adapts and optimizes in real time—powering systematic trading, dynamic portfolios and continuous risk control.
             </p>
 
-             <div class="hero-stats" style="display:flex; gap:3rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
-                <div>
-                    <h4 style="font-size:1.8rem; margin-bottom:0;">10+</h4>
-                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">Years of Quant & AI Research</span>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h4>10+</h4>
+                    <span>Years of Quant &amp; AI Research</span>
                 </div>
-                <div>
-                    <h4 style="font-size:1.8rem; margin-bottom:0;">36%</h4>
-                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">US Equity Alpha Generated</span>
+                <div class="hero-stat">
+                    <h4>36%</h4>
+                    <span>US Equity Alpha Generated</span>
                 </div>
-                <div>
-                    <h4 style="font-size:1.8rem; margin-bottom:0;">200M+</h4>
-                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;">Data Points Processed Daily</span>
+                <div class="hero-stat">
+                    <h4>200M+</h4>
+                    <span>Data Points Processed Daily</span>
                 </div>
             </div>
         </div>
@@ -625,34 +1291,27 @@
         <div class="hero-visual-container">
             <div class="dashboard-mockup">
                 <div class="mockup-header">
-                    <div class="traffic-lights">
-                        <span style="background:#ef4444"></span>
-                        <span style="background:#f59e0b"></span>
-                        <span style="background:#22c55e"></span>
-                    </div>
-                    <div style="font-size:0.7rem; color:#64748b; font-family:monospace; text-transform:uppercase;">LIVE AGENT STATUS: ACTIVE</div>
+                    <div class="console-brand">NaviMod <span>Intelligence Console</span></div>
+                    <div class="console-status"><span></span> ACTIVE</div>
                 </div>
                 <div class="mockup-content">
-                    
                     <div class="widget">
-                        <div class="widget-title">RISK SCOUT AGENT <span style="color:#22c55e">●</span></div>
-                        <div style="font-size:0.65rem; color:#94a3b8; margin-bottom:0.5rem; line-height:1.2;">Volatility Regime Indicator</div>
-                        
+                        <div class="widget-title">RISK SCOUT AGENT <span class="status-dot">●</span></div>
+                        <div class="widget-caption">Volatility Regime Indicator</div>
                         <div class="widget-value">Low Volatility</div>
                         <div class="chart-line">
-                             <svg viewBox="0 0 100 40" preserveAspectRatio="none">
-                                <path d="M0,30 Q20,35 40,20 T80,15 T100,5" fill="none" stroke="#a855f7" stroke-width="2"/>
-                                <path d="M0,30 Q20,35 40,20 T80,15 T100,5 V40 H0 Z" fill="rgba(168,85,247,0.2)"/>
+                            <svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M0,30 Q20,35 40,20 T80,15 T100,5" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+                                <path d="M0,30 Q20,35 40,20 T80,15 T100,5 V40 H0 Z" fill="rgba(125,211,252,0.12)"/>
                             </svg>
                         </div>
                     </div>
 
                     <div class="widget">
-                        <div class="widget-title">PORTFOLIO AGENT <span style="color:#22c55e">●</span></div>
-                        <div style="font-size:0.65rem; color:#94a3b8; margin-bottom:0.5rem; line-height:1.2;">US Equity Strategy (Annualized Alpha)</div>
-                        
+                        <div class="widget-title">PORTFOLIO AGENT <span class="status-dot">●</span></div>
+                        <div class="widget-caption">US Equity Strategy (Annualized Alpha)</div>
                         <div class="widget-value">+36% Alpha</div>
-                        <div class="chart-bars">
+                        <div class="chart-bars" aria-hidden="true">
                             <div class="bar" style="height:40%"></div>
                             <div class="bar" style="height:60%"></div>
                             <div class="bar active" style="height:85%"></div>
@@ -661,21 +1320,24 @@
                         </div>
                     </div>
 
-                    <a href="https://navimod.com/marketwatch/" target="_blank" class="widget full" style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; text-decoration:none; cursor:pointer;">
-                         <div>
-                             <div class="widget-title" style="margin:0">MARKET BAROMETER <span style="color:#22c55e">●</span></div>
-                             <div style="font-size:0.8rem; color:var(--text-secondary)">Real-Time ETF & Stock Market Regime</div>
-                         </div>
-                         <div style="padding:0.3rem 0.8rem; background:rgba(6,182,212,0.2); color:#06b6d4; border-radius:4px; font-size:0.75rem; font-family:monospace">VIEW LIVE →</div>
+                    <a href="https://navimod.com/marketwatch/" target="_blank" rel="noopener noreferrer" class="widget full market-widget">
+                        <div>
+                            <div class="widget-title">MARKET BAROMETER <span class="status-dot">●</span></div>
+                            <div class="widget-caption market-caption">Real-Time ETF &amp; Stock Market Regime</div>
+                        </div>
+                        <div class="market-link">VIEW LIVE <span>→</span></div>
                     </a>
+                </div>
+                <div class="console-foot">
+                    <span>Models</span><span>Risk Intelligence</span><span>Portfolio Systems</span>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="trusted">
-        <div class="section-header" style="margin-bottom:2rem; text-align:center;">
-             <span style="font-size:0.8rem; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">Trusted By</span>
+        <div class="section-header">
+             <span style="font-size:0.8rem; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">Selected Institutional Relationships</span>
         </div>
         <div class="trusted-logos">
             <img src="ZP-logo.png" alt="Ziraat Portföy" class="trusted-logo-img">
@@ -685,7 +1347,6 @@
             <img src="DB-logo.png" alt="Deutsche Bank" class="trusted-logo-img">
         </div>
     </div>
-<section class="why-section">
         <section id="why-navimod" class="why-section">
         <div class="why-header-block">
             <span class="why-tag">Why Choose NaviMod?</span>
@@ -813,22 +1474,169 @@
         </div>
     </section>
 
+    <section id="platform" class="platform-section">
+        <div class="orb-cyan"></div>
+        <div class="platform-arc"></div>
+        <div class="platform-inner">
+            <div class="platform-grid">
+
+                <div class="platform-content">
+                    <div class="platform-tagline">
+                        <span class="section-tag">The Platform</span>
+                        <span class="platform-badge">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            A NaviMod product
+                        </span>
+                    </div>
+
+                    <h2 class="platform-title">
+                        <span class="lead">Astera Financial Intelligence</span>
+                        <span class="emphasis">Systematic Equity for Institutions</span>
+                    </h2>
+
+                    <p class="platform-desc">
+                        Institutional-grade model portfolios, target weights and risk intelligence delivered directly into your investment infrastructure. You retain custody, execution and investment discretion.
+                    </p>
+
+                    <ul class="platform-features">
+                        <li class="platform-feature">
+                            <div class="platform-feature-icon">
+                                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+                            </div>
+                            <div>
+                                <h4>Systematic Strategy Suite</h4>
+                                <p>Long only, market neutral and ETF rotation mandates across daily and weekly rebalance frequencies.</p>
+                            </div>
+                        </li>
+                        <li class="platform-feature">
+                            <div class="platform-feature-icon">
+                                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            </div>
+                            <div>
+                                <h4>Guard &mdash; Risk Intelligence</h4>
+                                <p>Event, sentiment and risk-veto controls applied before portfolio construction — on Astera strategies or on your own signals.</p>
+                            </div>
+                        </li>
+                        <li class="platform-feature">
+                            <div class="platform-feature-icon">
+                                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 17l9 5 9-5"/><path d="M3 12l9 5 9-5"/></svg>
+                            </div>
+                            <div>
+                                <h4>Delivery Into Your Stack</h4>
+                                <p>API, CSV, FIX or scheduled file, mapped to your OMS, platform or custodian with reconciliation and reporting.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="platform-cta">
+                        <a href="https://asterafinance.com/?utm_source=navimod&amp;utm_medium=referral&amp;utm_campaign=platform_section&amp;utm_content=explore_strategies"
+                           target="_blank" rel="noopener noreferrer" class="platform-btn"
+                           onclick="if(typeof gtag==='function'){gtag('event','astera_platform_click',{'link_url':'https://asterafinance.com/','placement':'platform_section'});}">
+                            Explore Strategies
+                            <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+                        </a>
+                    </div>
+
+                    <p class="platform-disclaimer">
+                        For institutional use. Astera is a technology provider: it does not custody assets, place orders or execute trades. Strategy performance records and methodology detail are made available to approved institutions.
+                    </p>
+                </div>
+
+                <div class="platform-visual">
+                    <div class="platform-preview">
+                        <div class="platform-preview-header">
+                            <div class="astera-lockup">
+                                <svg class="astera-mark" viewBox="9 5.5 44 52.5" role="img" aria-label="Astera">
+                                    <defs>
+                                        <linearGradient id="asteraBlade" x1="20%" y1="0%" x2="85%" y2="100%">
+                                            <stop offset="0%" stop-color="#a9e9fb"/>
+                                            <stop offset="45%" stop-color="#67d7f3"/>
+                                            <stop offset="100%" stop-color="#8a9cff"/>
+                                        </linearGradient>
+                                        <radialGradient id="asteraOrb" cx="35%" cy="30%" r="75%">
+                                            <stop offset="0%" stop-color="#bdeafd"/>
+                                            <stop offset="60%" stop-color="#6cc6f2"/>
+                                            <stop offset="100%" stop-color="#3f7fd4"/>
+                                        </radialGradient>
+                                    </defs>
+                                    <ellipse cx="31" cy="37" rx="21.5" ry="8.4" fill="none" stroke="#a5e0f7" stroke-opacity=".55" stroke-width="1.2" transform="rotate(-21 31 37)"/>
+                                    <path d="M28.5 7.2h5.6a2 2 0 0 1 1.9 1.4l11.9 45.1a1.9 1.9 0 0 1-1.9 2.4h-5.2a2 2 0 0 1-1.9-1.5L26.6 9.6a2 2 0 0 1 1.9-2.4z" fill="url(#asteraBlade)"/>
+                                    <path d="M26.6 8.4h3.7a1.6 1.6 0 0 1 1.5 2.1l-5.3 17.6a1.6 1.6 0 0 1-3.1-.1l-.8-3.1a2 2 0 0 1 0-1l2.5-14.3a1.6 1.6 0 0 1 1.5-1.2z" fill="url(#asteraBlade)" opacity=".72"/>
+                                    <circle cx="20.5" cy="45.5" r="6.4" fill="url(#asteraOrb)"/>
+                                    <circle cx="49" cy="27.5" r="1.7" fill="#eaf8ff"/>
+                                </svg>
+                                <span class="astera-word">Astera</span>
+                            </div>
+                            <div class="platform-preview-status">Strategy Suite &middot; Risk /10</div>
+                        </div>
+
+                        <div class="strategy-list">
+                            <div class="strategy-row">
+                                <div class="strategy-name">Alpha Neutral Daily</div>
+                                <div class="strategy-track"><div class="strategy-fill low" style="width:12%"></div></div>
+                                <div class="strategy-score low">1.2</div>
+                            </div>
+                            <div class="strategy-row">
+                                <div class="strategy-name">Alpha Dynamic Weekly</div>
+                                <div class="strategy-track"><div class="strategy-fill low" style="width:16%"></div></div>
+                                <div class="strategy-score low">1.6</div>
+                            </div>
+                            <div class="strategy-row">
+                                <div class="strategy-name">Core Weekly 5</div>
+                                <div class="strategy-track"><div class="strategy-fill mid" style="width:38%"></div></div>
+                                <div class="strategy-score mid">3.8</div>
+                            </div>
+                            <div class="strategy-row">
+                                <div class="strategy-name">Core Daily 5</div>
+                                <div class="strategy-track"><div class="strategy-fill mid" style="width:38%"></div></div>
+                                <div class="strategy-score mid">3.8</div>
+                            </div>
+                            <div class="strategy-row">
+                                <div class="strategy-name">ETF Select Weekly</div>
+                                <div class="strategy-track"><div class="strategy-fill mid" style="width:38%"></div></div>
+                                <div class="strategy-score mid">3.8</div>
+                            </div>
+                            <div class="strategy-row">
+                                <div class="strategy-name">ETF Select Daily</div>
+                                <div class="strategy-track"><div class="strategy-fill mid" style="width:42%"></div></div>
+                                <div class="strategy-score mid">4.2</div>
+                            </div>
+                            <div class="strategy-row">
+                                <div class="strategy-name">Core Daily 1</div>
+                                <div class="strategy-track"><div class="strategy-fill high" style="width:58%"></div></div>
+                                <div class="strategy-score high">5.8</div>
+                            </div>
+                        </div>
+
+                        <div class="strategy-legend">
+                            <span><span class="dot" style="background:#22d3ee"></span>Conservative</span>
+                            <span><span class="dot" style="background:#6366f1"></span>Balanced</span>
+                            <span><span class="dot" style="background:#a855f7"></span>Growth</span>
+                        </div>
+
+                        <div class="strategy-foot">
+                            Long only, market neutral and ETF rotation mandates &middot; daily and weekly rebalance. Scored on Astera's 0&ndash;10 risk scale. Performance records available to approved institutions.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section id="agentic" class="agentic-section">
         <div class="section-header">
             <span class="section-tag">Agentic AI</span>
             <h2 class="section-title">Agentic Fund Framework</h2>
-            <p class="section-desc" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+            <p class="section-desc">
                 <strong style="color:white; display:block; margin-bottom:10px; font-size:1.2rem;">Autonomous multi-layer AI framework powering end-to-end fund management.</strong>
                 Our system orchestrates data ingestion, market insights, AI-driven predictions, and portfolio execution through LLM-powered autonomous agents—continuously optimizing allocation, risk, and performance.
             </p>
             
-            <div style="margin-top: 2.5rem; text-align: center;">
-                <a href="https://navimod.com/agentic_framework/" 
-                   style="display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 600; text-decoration: none; font-size: 1.05rem; padding: 0.8rem 1.5rem; border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 50px; background: rgba(168, 85, 247, 0.05); transition: all 0.3s ease;"
-                   onmouseover="this.style.background='rgba(168, 85, 247, 0.15)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 20px -10px rgba(168, 85, 247, 0.4)'"
-                   onmouseout="this.style.background='rgba(168, 85, 247, 0.05)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+            <div class="agentic-cta">
+                <a href="https://navimod.com/agentic_framework/" class="agentic-link">
                     Explore Framework Details
-                    <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
             </div>
             </div>
@@ -928,12 +1736,12 @@
         </div>
     </section>
 
-    <section id="contact" style="background:var(--bg-dark)">
+    <section id="contact">
         <div class="contact-container">
             <div class="contact-info">
                 <span class="section-tag">Book a Demo</span>
                 
-                <h2 class="section-title" style="font-size: 2.2rem; line-height: 1.3; max-width: 600px; margin-top: 1rem;">Experience how Agentic AI transforms trading, portfolio management, and risk intelligence.</h2>
+                <h2 class="section-title">Experience how Agentic AI transforms trading, portfolio management, and risk intelligence.</h2>
                 
                 <div style="margin-top:2rem">
                     <div style="margin-bottom:1.5rem">
@@ -954,7 +1762,7 @@
                 </div>
             </div>
             
-            <div class="contact-form-wrapper" style="background:rgba(255,255,255,0.03); padding:2.5rem; border-radius:20px; border:1px solid var(--border-light)">
+            <div class="contact-form-wrapper">
                 <form class="contact-form" action="https://formspree.io/f/mldqejjl" method="POST">
                     
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -986,8 +1794,8 @@
     </section>
 
     <footer>
-        <div style="margin-bottom:1.5rem; display:flex; justify-content:center;">
-            <img src="navimod-logo.png" alt="NaviMod" style="height: 70px; width: auto; opacity: 0.9;">
+        <div class="footer-logo">
+            <img src="navimod-logo.png" alt="NaviMod">
         </div>
         <div>&copy; <span id="current-year"></span>  NaviMod  Financial  Analytics  Solutions.  All  rights  reserved.</div>
     </footer>
@@ -1046,6 +1854,14 @@
                     }
                 }).then(response => {
                     if (response.ok) {
+                        // GA4: demo talebi dönüşümü (kişisel veri gönderilmez)
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'generate_lead', {
+                                'form_name': 'book_demo',
+                                'interest_area': formData.get('interest') || 'unspecified'
+                            });
+                        }
+
                         // Modal'ı göster
                         successModal.classList.add('show');
                         this.reset(); // Formu temizle
@@ -1067,6 +1883,24 @@
                     alert("Oops! There was a problem submitting your form");
                 });
             });
+        }
+    
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+            const closeMenu = () => {
+                navLinks.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', 'Open menu');
+            };
+            navToggle.addEventListener('click', () => {
+                const open = navLinks.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            });
+            navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+            window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeMenu(); });
         }
     </script>
 </body>
