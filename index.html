@@ -702,21 +702,18 @@
         @media (max-width: 1024px) {
             .platform-section { padding: 6rem 5%; }
             .platform-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-            .platform-title .lead, .platform-title .emphasis { font-size: 2.8rem; }
             .platform-desc, .platform-feature p { max-width: 100%; }
             .platform-preview { padding: 2rem 1.6rem; }
             .platform-arc { width: 800px; height: 800px; top: -42%; right: -34%; }
         }
         @media (max-width: 768px) {
-            .platform-title .lead, .platform-title .emphasis { font-size: 2.3rem; }
             .platform-desc { font-size: 1rem; }
         }
         @media (max-width: 480px) {
-            .platform-title .lead, .platform-title .emphasis { font-size: 1.95rem; }
             .platform-btn { width: 100%; justify-content: center; }
             .strategy-row { flex-wrap: wrap; gap: 0.55rem 1rem; padding: 0.95rem 0; }
-            .strategy-name { width: calc(100% - 60px); font-size: 0.9rem; }
-            .strategy-score { width: 44px; font-size: 1rem; }
+            .strategy-name { width: calc(100% - 60px); }
+            .strategy-score { width: 44px; }
             .strategy-track { flex-basis: 100%; }
         }
 
@@ -995,32 +992,34 @@
         .platform-visual { padding-top: 3.6rem; }
         .platform-badge { color:#aeb9ff; border-color:rgba(125,139,255,.18); background:rgba(91,124,250,.055); }
         .platform-title { margin-bottom:1.45rem; }
-        .platform-title .lead, .platform-title .emphasis { font-size:clamp(2.6rem,3.4vw,3.7rem); line-height:1.05; letter-spacing:-.045em; }
+        .platform-title .lead, .platform-title .emphasis { line-height:1.06; letter-spacing:-.045em; }
+        .platform-title .lead { font-size: clamp(1.85rem, 2.4vw, 2.55rem); }
+        .platform-title .emphasis { font-size: clamp(2.25rem, 3vw, 3.15rem); }
         .platform-title .emphasis { margin-top:.04em; line-height:1.14; padding-bottom:.06em; background:linear-gradient(100deg,#8ce8fb 0%,#67d7f3 47%,#8a9cff 100%); -webkit-background-clip:text; background-clip:text; }
-        .platform-desc { max-width:620px; font-size:1.03rem; line-height:1.78; margin-bottom:2.35rem; color:#98a9bf; }
+        .platform-desc { max-width:620px; font-size:1.1rem; line-height:1.78; margin-bottom:2.35rem; color:#98a9bf; }
         .platform-features { margin-bottom:2.45rem; }
         .platform-feature { gap:1.1rem; padding:1.12rem 0; }
         .platform-feature + .platform-feature { border-color:rgba(151,180,215,.07); }
         .platform-feature-icon { width:46px; height:46px; border-radius:13px; background:rgba(103,215,243,.055); border-color:rgba(103,215,243,.15); color:#83e3f7; }
-        .platform-feature h4 { font-size:1rem; font-weight:600; margin-bottom:.25rem; }
-        .platform-feature p { max-width:500px; color:#8293a9; font-size:.89rem; line-height:1.58; }
+        .platform-feature h4 { font-size:1.05rem; font-weight:600; margin-bottom:.25rem; }
+        .platform-feature p { max-width:500px; color:#8293a9; font-size:.94rem; line-height:1.58; }
         .platform-cta { gap:.75rem; }
-        .platform-btn { padding:.86rem 1.3rem; font-size:.9rem; min-height:48px; }
+        .platform-btn { padding:.86rem 1.3rem; font-size:.94rem; min-height:48px; }
         .platform-btn { background:linear-gradient(105deg,#8ce8fb,#67d7f3 57%,#6ebcf2); box-shadow:0 16px 38px -20px rgba(103,215,243,.95); }
         .platform-disclaimer { margin-top:2.25rem; max-width:610px; color:#7b8aa1; border-left-color:rgba(103,215,243,.13); }
         .platform-preview { padding:2.2rem 2rem; border-radius:26px; background:linear-gradient(155deg, rgba(16,32,53,.9), rgba(7,15,28,.94)); border-color:rgba(125,211,252,.16); box-shadow:0 48px 110px -46px rgba(0,0,0,.96), inset 0 1px 0 rgba(255,255,255,.055); }
         .platform-preview:hover { transform:translateY(-4px); border-color:rgba(125,211,252,.27); }
-        .platform-preview-status { font-size:.64rem; color:#8291a8; }
+        .platform-preview-status { font-size:.69rem; color:#8291a8; }
         .strategy-row { gap:1.2rem; padding:1.03rem 0; }
-        .strategy-name { width:39%; font-size:.9rem; color:#bac6d4; }
+        .strategy-name { width:39%; font-size:.94rem; color:#bac6d4; }
         .strategy-track { height:8px; background:rgba(255,255,255,.055); }
         .strategy-fill.low { background:linear-gradient(90deg,#67d7f3,#8ce8fb); box-shadow:0 0 14px rgba(103,215,243,.28); }
         .strategy-fill.mid { background:linear-gradient(90deg,#697cf5,#8a9cff); box-shadow:0 0 14px rgba(105,124,245,.22); }
         .strategy-fill.high { background:linear-gradient(90deg,#9866ef,#ba87ff); box-shadow:0 0 14px rgba(152,102,239,.24); }
-        .strategy-score { font-size:1rem; }
+        .strategy-score { font-size:1.05rem; }
         .strategy-score.low { color:#8ce8fb; } .strategy-score.mid{color:#a7b2ff;} .strategy-score.high{color:#caa4ff;}
-        .strategy-legend { border-color:rgba(151,180,215,.08); gap:1.35rem; font-size:.74rem; }
-        .strategy-foot { border-color:rgba(151,180,215,.08); color:#5d6f86; }
+        .strategy-legend { border-color:rgba(151,180,215,.08); gap:1.35rem; font-size:.72rem; }
+        .strategy-foot { border-color:rgba(151,180,215,.08); color:#7b8aa1; font-size:.78rem; }
 
         /* Agentic AI */
         .agentic-section {
@@ -1163,7 +1162,8 @@
             .mockup-content { grid-template-columns:1fr; }
             .widget.full { grid-column:span 1; }
             .platform-section, .why-section, section { padding-left:1.25rem; padding-right:1.25rem; }
-            .platform-title .lead,.platform-title .emphasis { font-size:clamp(2.1rem,10vw,3rem); }
+            .platform-title .lead { font-size:clamp(1.7rem,7vw,2.1rem); }
+            .platform-title .emphasis { font-size:clamp(2rem,8.5vw,2.6rem); }
             .strategy-name { width:42%; }
             .team-card { max-width:none; }
         }
@@ -1223,14 +1223,14 @@
 
         /* Astera lockup */
         .astera-lockup { display: flex; align-items: center; gap: .7rem; }
-        .astera-mark { height: 36px; width: auto; flex-shrink: 0; filter: drop-shadow(0 0 14px rgba(103,215,243,.28)); }
+        .astera-mark { height: 42px; width: auto; flex-shrink: 0; display: block; }
         .astera-word {
             font-family: 'Space Grotesk', sans-serif; font-size: 1.45rem; font-weight: 600;
             color: #f4f7fb; letter-spacing: -.045em; line-height: 1;
         }
         @media (max-width: 520px) {
-            .astera-mark { height: 31px; }
-            .astera-word { font-size: 1.2rem; }
+            .astera-mark { height: 36px; }
+            .astera-word { font-size: 1.28rem; }
         }
 </style>
 </head>
@@ -1546,25 +1546,7 @@
                     <div class="platform-preview">
                         <div class="platform-preview-header">
                             <div class="astera-lockup">
-                                <svg class="astera-mark" viewBox="9 5.5 44 52.5" role="img" aria-label="Astera">
-                                    <defs>
-                                        <linearGradient id="asteraBlade" x1="20%" y1="0%" x2="85%" y2="100%">
-                                            <stop offset="0%" stop-color="#a9e9fb"/>
-                                            <stop offset="45%" stop-color="#67d7f3"/>
-                                            <stop offset="100%" stop-color="#8a9cff"/>
-                                        </linearGradient>
-                                        <radialGradient id="asteraOrb" cx="35%" cy="30%" r="75%">
-                                            <stop offset="0%" stop-color="#bdeafd"/>
-                                            <stop offset="60%" stop-color="#6cc6f2"/>
-                                            <stop offset="100%" stop-color="#3f7fd4"/>
-                                        </radialGradient>
-                                    </defs>
-                                    <ellipse cx="31" cy="37" rx="21.5" ry="8.4" fill="none" stroke="#a5e0f7" stroke-opacity=".55" stroke-width="1.2" transform="rotate(-21 31 37)"/>
-                                    <path d="M28.5 7.2h5.6a2 2 0 0 1 1.9 1.4l11.9 45.1a1.9 1.9 0 0 1-1.9 2.4h-5.2a2 2 0 0 1-1.9-1.5L26.6 9.6a2 2 0 0 1 1.9-2.4z" fill="url(#asteraBlade)"/>
-                                    <path d="M26.6 8.4h3.7a1.6 1.6 0 0 1 1.5 2.1l-5.3 17.6a1.6 1.6 0 0 1-3.1-.1l-.8-3.1a2 2 0 0 1 0-1l2.5-14.3a1.6 1.6 0 0 1 1.5-1.2z" fill="url(#asteraBlade)" opacity=".72"/>
-                                    <circle cx="20.5" cy="45.5" r="6.4" fill="url(#asteraOrb)"/>
-                                    <circle cx="49" cy="27.5" r="1.7" fill="#eaf8ff"/>
-                                </svg>
+                                <img src="astera-logo.webp" alt="Astera" class="astera-mark" width="162" height="132" loading="lazy" decoding="async">
                                 <span class="astera-word">Astera</span>
                             </div>
                             <div class="platform-preview-status">Strategy Suite &middot; Risk /10</div>
