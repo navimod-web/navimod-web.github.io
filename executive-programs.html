@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TS9K7M4HJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5TS9K7M4HJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI in Financial Services | Executive Programs | NaviMod</title>
+    <meta name="description" content="Agentic AI in Financial Services: executive programs, hands-on workshops and corporate AI labs that take banks, asset managers and financial institutions from AI strategy to working agents. Led by Prof. Dr. Alp Ustundag.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           NAVIMOD — EXECUTIVE PROGRAMS
+           Uses the navimod.com design tokens and components.
+           Stage colors encode the journey: Learn (cyan), Build (blue), Scale (violet).
+           ============================================================ */
+        :root {
+            --bg-darker: #02060d;
+            --primary: #5b7cfa;
+            --primary-light: #9aaaff;
+            --secondary: #67d7f3;
+            --accent: #9a6cff;
+            --text-primary: #f4f7fb;
+            --text-secondary: #93a3ba;
+            --text-muted: #7d8da4;
+            --line: rgba(151,180,215,.085);
+            --line-soft: rgba(151,180,215,.065);
+            --shadow-card: 0 26px 70px -36px rgba(0,0,0,.9);
+            --learn: #67d7f3;
+            --build: #8a9cff;
+            --scale: #b28cff;
+            --content-width: 1180px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; background: var(--bg-darker); }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background:
+                radial-gradient(900px 560px at 83% -10%, rgba(42,108,176,.10), transparent 70%),
+                var(--bg-darker);
+            color: var(--text-primary);
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+            background-image: radial-gradient(rgba(255,255,255,.035) .7px, transparent .7px);
+            background-size: 28px 28px;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.45), transparent 60%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,.45), transparent 60%);
+        }
+        ::selection { background: rgba(103,215,243,.28); color: white; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        img { max-width: 100%; }
+
+        /* ---------- Navigation (identical to navimod.com) ---------- */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: .72rem clamp(1.25rem, 5vw, 5rem); min-height: 76px;
+            background: rgba(3,8,18,.72);
+            backdrop-filter: blur(22px) saturate(125%); -webkit-backdrop-filter: blur(22px) saturate(125%);
+            border-bottom: 1px solid rgba(255,255,255,.055); transition: .4s;
+        }
+        .nav-scrolled { padding: .55rem clamp(1.25rem, 5vw, 5rem); background: rgba(2,6,13,.94); box-shadow: 0 16px 40px -30px rgba(0,0,0,.95); }
+        .logo { display: flex; align-items: center; text-decoration: none; gap: 11px; flex-shrink: 0; }
+        .logo img { height: 50px; width: auto; filter: drop-shadow(0 0 16px rgba(103,215,243,.12)); }
+        .logo-text { font-family: 'Space Grotesk', sans-serif; font-size: 1.45rem; letter-spacing: -.055em; font-weight: 650; color: #f7fafc; }
+        .nav-links { display: flex; gap: clamp(1.2rem, 2vw, 2.25rem); list-style: none; align-items: center; }
+        .nav-links a { color: #91a0b6; text-decoration: none; font-size: .92rem; font-weight: 500; transition: .3s; position: relative; }
+        .nav-links a:hover, .nav-links a.is-current { color: white; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 1px; background: #67d7f3; transition: .3s; }
+        .nav-links a:hover::after, .nav-links a.is-current::after { width: 100%; }
+        .nav-actions { display: flex; align-items: center; gap: .6rem; }
+        .nav-toggle {
+            display: none; width: 42px; height: 42px; padding: 0;
+            flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+            background: rgba(255,255,255,.03); border: 1px solid rgba(151,180,215,.14);
+            border-radius: 12px; cursor: pointer; transition: .3s ease;
+        }
+        .nav-toggle span { display: block; width: 17px; height: 1.5px; border-radius: 2px; background: #cfdae8; transition: transform .3s ease, opacity .2s ease; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        /* ---------- Shared section rhythm ---------- */
+        section { padding: 7rem clamp(1.25rem, 5vw, 5rem); position: relative; }
+        .wrap { max-width: var(--content-width); margin: 0 auto; }
+        .section-header { text-align: center; max-width: 820px; margin: 0 auto 4rem; }
+        .section-header.left { text-align: left; margin-left: 0; }
+        .section-tag {
+            display: inline-block; padding: .42rem .88rem; border-radius: 999px;
+            background: rgba(103,215,243,.065); border: 1px solid rgba(103,215,243,.16);
+            color: #8ce8fb; font-size: .72rem; letter-spacing: .13em; font-weight: 700;
+            text-transform: uppercase; margin-bottom: 1rem;
+        }
+        .section-title { font-size: clamp(2.1rem, 3vw, 3.05rem); line-height: 1.08; letter-spacing: -.045em; font-weight: 600; color: #f6f8fb; margin-bottom: 1rem; }
+        .section-desc { color: #8ea0b7; font-size: 1.08rem; line-height: 1.75; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+            min-height: 48px; padding: .86rem 1.35rem; border-radius: 999px;
+            font-family: inherit; font-size: .94rem; font-weight: 700; text-decoration: none; cursor: pointer;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+        }
+        .btn-primary { background: linear-gradient(105deg,#8ce8fb,#67d7f3 57%,#6ebcf2); color: #04131a; border: 0; box-shadow: 0 16px 38px -20px rgba(103,215,243,.95); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px -8px rgba(103,215,243,.9); }
+        .btn-ghost { color: #dbe6f2; border: 1px solid rgba(151,180,215,.2); background: rgba(255,255,255,.025); }
+        .btn-ghost:hover { border-color: rgba(103,215,243,.4); background: rgba(103,215,243,.06); }
+        .btn svg { width: 17px; height: 17px; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            min-height: 100vh; display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(460px, .95fr);
+            align-items: center; gap: clamp(3rem, 6vw, 6rem);
+            padding: 9.5rem clamp(1.25rem, 5vw, 5rem) 5.5rem;
+            background:
+                radial-gradient(780px 590px at 79% 20%, rgba(19,95,153,.17), transparent 67%),
+                radial-gradient(620px 460px at 23% 12%, rgba(91,124,250,.09), transparent 66%),
+                linear-gradient(180deg, #050a13 0%, #02060d 100%);
+            overflow: hidden; isolation: isolate;
+        }
+        .hero::before {
+            content: ''; position: absolute; width: 940px; height: 940px; border-radius: 50%;
+            border: 1px solid rgba(103,215,243,.13); top: -510px; right: -220px;
+            box-shadow: 0 0 130px rgba(103,215,243,.07), inset 0 0 120px rgba(103,215,243,.035);
+            z-index: -1; pointer-events: none;
+        }
+        .hero-content { max-width: 690px; }
+        .hero h1 { font-size: clamp(3rem, 4.6vw, 4.7rem); font-weight: 700; line-height: .95; letter-spacing: -.045em; margin: .4rem 0 1.6rem; color: white; }
+        .hero h1 span {
+            display: block; margin-top: .22em; font-size: .46em; line-height: 1.2; letter-spacing: -.03em; font-weight: 600;
+            background: linear-gradient(100deg, #8be6f7 0%, #67d7f3 36%, #8a9cff 78%, #aa86ff 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+        }
+        .hero-lede { max-width: 610px; font-size: 1.12rem; line-height: 1.78; color: #99a9bf; margin-bottom: 2.2rem; }
+        .hero-lede strong { color: #eef5fb; font-weight: 600; }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 2.6rem; }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-top: 1px solid rgba(151,180,215,.10); padding-top: 1.45rem; max-width: 630px; }
+        .hero-stat { padding-right: 1.15rem; }
+        .hero-stat + .hero-stat { border-left: 1px solid rgba(151,180,215,.08); padding-left: 1.3rem; }
+        .hero-stat strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 1.45rem; font-weight: 600; color: #f5f8fb; margin-bottom: .2rem; }
+        .hero-stat span { display: block; color: #6f8098; font-size: .76rem; line-height: 1.45; }
+
+        /* Journey console — the signature element */
+        .journey-console {
+            position: relative; width: 100%; max-width: 600px; justify-self: end;
+            padding: 1.6rem; border-radius: 28px;
+            background: linear-gradient(155deg, rgba(16,31,51,.88), rgba(7,14,26,.92));
+            border: 1px solid rgba(125,211,252,.16);
+            box-shadow: 0 48px 110px -46px rgba(0,0,0,.96), inset 0 1px 0 rgba(255,255,255,.055);
+        }
+        .console-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.05rem; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(151,180,215,.09); }
+        .console-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -.025em; color: #f4f7fb; }
+        .console-brand small { margin-left: .45rem; color: #8b9ab0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: .76rem; }
+        .console-note { color: #7d8da4; font-size: .74rem; }
+        .journey { list-style: none; position: relative; }
+        .journey::before {
+            content: ''; position: absolute; left: 19px; top: 22px; bottom: 22px; width: 2px; border-radius: 2px;
+            background: linear-gradient(to bottom, var(--learn), var(--build) 55%, var(--scale));
+            transform-origin: top; animation: rail 1.4s .3s cubic-bezier(.6,0,.2,1) both;
+        }
+        @keyframes rail { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+        .journey li { position: relative; display: grid; grid-template-columns: 40px 1fr auto; gap: 1rem; align-items: center; padding: .8rem 0; }
+        .journey li + li { border-top: 1px solid rgba(151,180,215,.06); }
+        .j-dot {
+            width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; z-index: 1;
+            background: #0a1524; border: 1.5px solid var(--c); color: var(--c);
+            font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .9rem;
+            box-shadow: 0 0 0 5px rgba(10,21,36,1), 0 0 22px -4px var(--c);
+        }
+        .j-stage { font-size: .72rem; font-weight: 700; color: var(--c); letter-spacing: .06em; }
+        .j-name { display: block; font-family: 'Space Grotesk', sans-serif; color: #eef3f9; font-weight: 600; font-size: 1.02rem; letter-spacing: -.02em; }
+        .j-out { display: block; color: #7f90a6; font-size: .8rem; line-height: 1.45; }
+        .j-dur { color: #b9c5d3; font-size: .78rem; font-weight: 600; padding: .32rem .62rem; border-radius: 999px; border: 1px solid rgba(151,180,215,.12); background: rgba(255,255,255,.025); white-space: nowrap; }
+        .console-foot { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(151,180,215,.075); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+        .console-foot span { color: #7d8da4; font-size: .76rem; }
+        .console-foot a { color: #caa8ff; font-size: .8rem; font-weight: 600; text-decoration: none; }
+        .console-foot a:hover { color: #e0ceff; }
+        .learn { --c: var(--learn); } .build { --c: var(--build); } .scale { --c: var(--scale); }
+
+        /* ---------- Why ---------- */
+        #approach { background: #02060d; }
+        .why-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.25rem; }
+        .card {
+            background: linear-gradient(150deg, rgba(255,255,255,.034), rgba(255,255,255,.014));
+            border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow-card);
+        }
+        .why-card { padding: 2rem 1.8rem; }
+        .why-icon {
+            width: 52px; height: 52px; border-radius: 15px; margin-bottom: 1.45rem; display: grid; place-items: center;
+            background: linear-gradient(145deg, rgba(103,215,243,.10), rgba(91,124,250,.07));
+            color: #80def2; border: 1px solid rgba(103,215,243,.13);
+        }
+        .why-icon svg { width: 25px; height: 25px; }
+        .why-card h3 { font-size: 1.16rem; letter-spacing: -.025em; font-weight: 600; margin-bottom: .65rem; color: #f4f7fb; }
+        .why-card p { color: #8798ae; font-size: .92rem; line-height: 1.7; }
+
+        /* ---------- Institutions: journey stages ---------- */
+        #institutions { background: linear-gradient(180deg, #02060d, #050c18); }
+        .stages { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.25rem; position: relative; }
+        .stage { padding: 1.8rem; border-top: 2px solid var(--c); border-radius: 22px; display: flex; flex-direction: column; }
+        .stage-head { display: flex; align-items: baseline; gap: .7rem; margin-bottom: .4rem; }
+        .stage-head b { font-family: 'Space Grotesk', sans-serif; color: var(--c); font-size: .95rem; font-weight: 600; }
+        .stage-head h3 { font-size: 1.5rem; letter-spacing: -.035em; font-weight: 600; color: white; }
+        .stage > p { color: #8798ae; font-size: .92rem; line-height: 1.65; margin-bottom: 1.4rem; }
+        .stage-items { display: grid; gap: .75rem; margin-top: auto; }
+        .stage.learn .stage-items { grid-template-columns: 1fr 1fr; }
+        .stage-item {
+            display: block; min-height: 116px; text-align: left; width: 100%; font-family: inherit; cursor: pointer;
+            padding: 1.15rem 1.2rem; border-radius: 16px;
+            background: rgba(2,8,16,.55); border: 1px solid rgba(151,180,215,.1); transition: border-color .25s, background .25s;
+        }
+        .stage-item:hover { border-color: var(--c); background: rgba(255,255,255,.03); }
+        .stage-item strong { display: block; font-family: 'Space Grotesk', sans-serif; color: #eef3f9; font-weight: 600; font-size: 1.02rem; letter-spacing: -.02em; margin-bottom: .2rem; }
+        .stage-item span { display: block; color: #7f90a6; font-size: .8rem; line-height: 1.5; }
+        .stage-item em { display: inline-block; margin-top: .6rem; font-style: normal; color: var(--c); font-size: .78rem; font-weight: 700; }
+        .journey-line {
+            margin: 2.5rem auto 0; max-width: 900px; text-align: center; color: #a8b6c8; font-size: 1.02rem; line-height: 1.8;
+        }
+        .journey-line b { font-weight: 600; }
+        .journey-line .l { color: var(--learn); } .journey-line .b { color: var(--build); } .journey-line .s { color: var(--scale); }
+
+        /* ---------- Program detail tabs ---------- */
+        #programs { background: #050c18; padding-top: 3rem; }
+        .tabs { display: flex; gap: .5rem; overflow-x: auto; padding-bottom: .4rem; margin-bottom: 1.5rem; scrollbar-width: thin; }
+        .tab {
+            flex: 0 0 auto; font-family: inherit; cursor: pointer; font-size: .9rem; font-weight: 600; color: #93a3ba;
+            padding: .72rem 1.15rem; border-radius: 999px; border: 1px solid rgba(151,180,215,.13); background: rgba(255,255,255,.02);
+            transition: .25s ease; display: inline-flex; align-items: center; gap: .55rem;
+        }
+        .tab i { width: 7px; height: 7px; border-radius: 50%; background: var(--c); opacity: .75; }
+        .tab:hover { color: white; border-color: rgba(151,180,215,.3); }
+        .tab[aria-selected="true"] { color: white; border-color: var(--c); background: rgba(255,255,255,.05); }
+        .panel { padding: clamp(1.5rem, 3vw, 2.6rem); border-radius: 26px; }
+        .panel[hidden] { display: none; }
+        .panel.is-shown { animation: panelIn .35s ease both; }
+        @keyframes panelIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+        .panel-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 4vw, 3.5rem); }
+        .p-stage { font-size: .78rem; font-weight: 700; color: var(--c); letter-spacing: .06em; }
+        .panel h3 { font-size: clamp(1.6rem, 2.3vw, 2.1rem); letter-spacing: -.04em; line-height: 1.12; font-weight: 600; color: white; margin: .35rem 0 .9rem; }
+        .p-intro { color: #98a9bf; font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem; }
+        .facts { display: grid; grid-template-columns: auto 1fr; gap: .55rem 1.2rem; padding: 1.1rem 0; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); margin-bottom: 1.6rem; }
+        .facts dt { color: #6f8098; font-size: .82rem; }
+        .facts dd { color: #d5deea; font-size: .88rem; font-weight: 500; }
+        .sub { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; color: #eef3f9; font-weight: 600; letter-spacing: -.02em; margin-bottom: .7rem; }
+        .ticks { list-style: none; display: grid; gap: .55rem; margin-bottom: 1.6rem; }
+        .ticks li { position: relative; padding-left: 1.2rem; color: #b9c5d3; font-size: .9rem; line-height: 1.55; }
+        .ticks li::before { content: ''; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--c, #67d7f3); }
+        .next {
+            display: flex; gap: .9rem; align-items: flex-start; padding: 1rem 1.1rem; border-radius: 16px;
+            background: rgba(2,8,16,.55); border: 1px dashed rgba(151,180,215,.18);
+        }
+        .next b { color: #eef3f9; font-size: .82rem; white-space: nowrap; }
+        .next p { color: #9fb0c4; font-size: .88rem; line-height: 1.6; }
+        .next button { background: none; border: 0; padding: 0; color: #8ce8fb; font: inherit; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+        .agenda { display: grid; gap: 1rem; align-content: start; }
+        .day { padding: 1.3rem 1.4rem; border-radius: 18px; background: rgba(2,8,16,.5); border: 1px solid rgba(151,180,215,.09); }
+        .day-head { display: flex; align-items: baseline; gap: .75rem; margin-bottom: .75rem; }
+        .day-head span { color: var(--c); font-size: .78rem; font-weight: 700; white-space: nowrap; }
+        .day-head h4 { color: #eef3f9; font-size: 1.05rem; font-weight: 600; letter-spacing: -.02em; }
+        .sessions { list-style: none; display: grid; gap: .1rem; }
+        .sessions li { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: .55rem 0; color: #b9c5d3; font-size: .9rem; line-height: 1.5; border-top: 1px solid rgba(151,180,215,.06); }
+        .sessions li:first-child { border-top: 0; }
+        .kind { align-self: start; font-size: .7rem; font-weight: 700; padding: .18rem .55rem; border-radius: 999px; white-space: nowrap; }
+        .kind.demo { color: #caa8ff; background: rgba(154,108,255,.1); }
+        .kind.lab { color: #a7b4ff; background: rgba(138,156,255,.1); }
+        .kind.work { color: #8ce8fb; background: rgba(103,215,243,.08); }
+        .kind.panel-k { color: #f0c987; background: rgba(240,201,135,.08); }
+
+        /* Lab phases */
+        .phases { list-style: none; display: grid; gap: 0; counter-reset: ph; }
+        .phases li { display: grid; grid-template-columns: 34px 1fr auto; gap: 1rem; padding: .95rem 0; border-top: 1px solid rgba(151,180,215,.07); align-items: start; }
+        .phases li:first-child { border-top: 0; }
+        .phases li::before {
+            counter-increment: ph; content: counter(ph);
+            width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+            border: 1.5px solid var(--scale); color: var(--scale); font-family: 'Space Grotesk', sans-serif; font-size: .82rem; font-weight: 600;
+        }
+        .phases h4 { color: #eef3f9; font-size: 1rem; font-weight: 600; margin-bottom: .15rem; }
+        .phases p { color: #8798ae; font-size: .86rem; line-height: 1.55; }
+        .phases time { color: #b9c5d3; font-size: .78rem; font-weight: 600; white-space: nowrap; padding-top: .2rem; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+        .mini { padding: 1.2rem 1.3rem; border-radius: 18px; background: rgba(2,8,16,.5); border: 1px solid rgba(151,180,215,.09); }
+        .mini .ticks { margin-bottom: 0; }
+
+        /* Specialist modules strip */
+        .modules { margin-top: 1.25rem; display: grid; grid-template-columns: auto 1fr 1fr; gap: 1.25rem; align-items: stretch; padding: 1.5rem; border-radius: 22px; }
+        .modules > h3 { font-size: 1.08rem; font-weight: 600; color: #eef3f9; letter-spacing: -.02em; max-width: 200px; line-height: 1.3; align-self: center; }
+        .modules > h3 small { display: block; margin-top: .35rem; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8rem; font-weight: 500; color: #7f90a6; letter-spacing: 0; }
+        .module { padding: 1.1rem 1.25rem; border-radius: 16px; background: rgba(2,8,16,.5); border: 1px solid rgba(151,180,215,.09); }
+        .module strong { display: block; color: #eef3f9; font-size: .95rem; margin-bottom: .25rem; }
+        .module span { color: #8798ae; font-size: .84rem; line-height: 1.55; }
+
+        /* ---------- Faculty ---------- */
+        #faculty { background: linear-gradient(180deg, #02060d, #040913); }
+        .director { display: grid; grid-template-columns: 260px 1fr; gap: clamp(1.5rem, 4vw, 3rem); padding: clamp(1.5rem, 3vw, 2.6rem); border-radius: 26px; margin-bottom: 1.25rem; }
+        .director-photo { width: 100%; aspect-ratio: 4/5; border-radius: 20px; overflow: hidden; border: 1px solid rgba(103,215,243,.15); background: #0a1524; }
+        .director-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+        .director-role { color: #8ce8fb; font-size: .85rem; font-weight: 600; }
+        .director h3 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); letter-spacing: -.04em; font-weight: 600; color: white; margin: .3rem 0 .2rem; }
+        .director-sub { color: #7f90a6; font-size: .9rem; margin-bottom: 1.2rem; }
+        .director-bio { color: #a3b2c5; font-size: .98rem; line-height: 1.78; margin-bottom: 1.4rem; max-width: 720px; }
+        .creds { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); border-top: 1px solid var(--line-soft); padding-top: 1.1rem; margin-bottom: 1.5rem; }
+        .creds div { padding-right: 1rem; }
+        .creds div + div { border-left: 1px solid var(--line-soft); padding-left: 1rem; }
+        .creds strong { display: block; font-family: 'Space Grotesk', sans-serif; color: #f5f8fb; font-size: 1.2rem; font-weight: 600; }
+        .creds span { color: #7f90a6; font-size: .78rem; line-height: 1.4; display: block; }
+        .director-links { display: flex; flex-wrap: wrap; gap: .65rem; }
+        .faculty-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.15rem; }
+        .fac { padding: 1.6rem 1.4rem; border-radius: 20px; text-align: center; }
+        .fac-img { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; margin: 0 auto 1rem; border: 1px solid rgba(103,215,243,.15); box-shadow: 0 0 0 5px rgba(103,215,243,.025); background: #0a1524; }
+        .fac-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .fac h4 { font-size: 1rem; font-weight: 600; letter-spacing: -.02em; color: white; }
+        .fac .role { color: #8ce8fb; font-size: .76rem; margin: .15rem 0 .55rem; }
+        .fac p { color: #7f90a6; font-size: .8rem; line-height: 1.6; }
+        .guest-note { margin-top: 1.25rem; text-align: center; color: #8798ae; font-size: .92rem; }
+
+        /* ---------- FAQ ---------- */
+        #faq { background: #040913; }
+        .faq { max-width: 860px; margin: 0 auto; }
+        .faq details { border-top: 1px solid rgba(151,180,215,.1); }
+        .faq details:last-child { border-bottom: 1px solid rgba(151,180,215,.1); }
+        .faq summary {
+            list-style: none; cursor: pointer; padding: 1.3rem 2.5rem 1.3rem 0; position: relative;
+            font-family: 'Space Grotesk', sans-serif; font-size: 1.08rem; font-weight: 600; color: #eef3f9; letter-spacing: -.02em;
+        }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: '+'; position: absolute; right: .3rem; top: 50%; transform: translateY(-50%); color: #67d7f3; font-size: 1.4rem; font-weight: 400; transition: transform .25s; }
+        .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+        .faq details p { color: #93a3ba; font-size: .95rem; line-height: 1.75; padding: 0 2.5rem 1.4rem 0; }
+
+        /* ---------- Contact (navimod.com form) ---------- */
+        #contact { background: radial-gradient(700px 400px at 12% 0%, rgba(42,112,170,.10), transparent 70%), #06101b; }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: var(--content-width); margin: 0 auto; align-items: start; }
+        .contact-info .section-title { font-size: clamp(2rem, 2.8vw, 2.7rem); line-height: 1.12; }
+        .contact-lede { color: #8ea0b7; line-height: 1.75; margin-bottom: 2rem; }
+        .contact-block { margin-bottom: 1.5rem; }
+        .contact-block strong { display: block; color: #dfe8f2; font-size: .82rem; margin-bottom: .3rem; }
+        .contact-block span, .contact-block a { color: var(--text-secondary); font-size: .92rem; }
+        .contact-block a { color: var(--primary-light); text-decoration: none; }
+        .contact-block a:hover { color: #c8d0ff; }
+        .contact-form-wrapper { background: linear-gradient(155deg, rgba(255,255,255,.038), rgba(255,255,255,.016)); padding: 2rem; border-radius: 22px; border: 1px solid rgba(151,180,215,.10); box-shadow: var(--shadow-card); }
+        .contact-form { display: grid; gap: .9rem; }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%; padding: 1rem 1.05rem; background: rgba(2,8,16,.72); border: 1px solid rgba(151,180,215,.10);
+            border-radius: 12px; color: #eef4fa; font-size: .9rem; font-family: inherit; transition: .25s ease;
+        }
+        .contact-form select:invalid { color: #94a3b8; }
+        .contact-form select option { background: #050a14; color: white; }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { outline: none; border-color: rgba(103,215,243,.35); box-shadow: 0 0 0 3px rgba(103,215,243,.055); }
+        .contact-form button { padding: 1rem; border: 0; border-radius: 999px; background: linear-gradient(105deg,#8ce8fb,#67d7f3 58%,#6ebcf2); color: #04131a; font-weight: 700; font-size: .92rem; font-family: inherit; cursor: pointer; box-shadow: 0 16px 38px -22px rgba(103,215,243,.95); transition: .3s; }
+        .contact-form button:hover { transform: translateY(-2px); }
+        .contact-form button[disabled] { opacity: .6; cursor: wait; transform: none; }
+        .form-note { color: #6f8098; font-size: .78rem; line-height: 1.5; }
+
+        /* ---------- Footer / modal ---------- */
+        footer { padding: 3.5rem 5% 2.5rem; background: #02060d; border-top: 1px solid rgba(151,180,215,.075); text-align: center; color: #526278; font-size: .78rem; }
+        .footer-logo { margin-bottom: 1.5rem; display: flex; justify-content: center; }
+        footer img { height: 52px; opacity: .75; }
+        footer nav.foot-links { position: static; display: flex; justify-content: center; gap: 1.5rem; background: none; border: 0; padding: 0 0 1.2rem; min-height: 0; backdrop-filter: none; -webkit-backdrop-filter: none; }
+        footer .foot-links a { color: #7d8da4; text-decoration: none; font-size: .82rem; }
+        footer .foot-links a:hover { color: white; }
+        .success-modal { position: fixed; inset: 0; background: rgba(2,6,13,.8); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: .3s; }
+        .success-modal.show { opacity: 1; visibility: visible; }
+        .success-content { background: linear-gradient(155deg, rgba(14,29,48,.98), rgba(6,14,26,.98)); border: 1px solid rgba(103,215,243,.18); border-radius: 24px; padding: 3rem; text-align: center; max-width: 480px; margin: 1rem; }
+        .success-icon { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 1.5rem; display: grid; place-items: center; background: linear-gradient(135deg,#67d7f3,#7d8cff); }
+        .success-icon svg { width: 34px; height: 34px; color: #04131a; }
+        .success-content h3 { font-size: 1.7rem; margin-bottom: .8rem; color: white; }
+        .success-content p { color: #93a3ba; margin-bottom: 1.5rem; }
+
+        /* ---------- Accessibility + motion ---------- */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #8ce8fb; outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1180px) {
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: .84rem; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .faculty-grid { grid-template-columns: repeat(2, 1fr); }
+            .stages { grid-template-columns: 1fr 1fr; }
+            .stage.learn { grid-column: 1 / -1; }
+        }
+        @media (max-width: 1024px) {
+            nav { min-height: 68px; flex-wrap: wrap; }
+            .logo img { height: 45px; }
+            .nav-toggle { display: flex; }
+            .nav-links {
+                display: flex; flex-direction: column; align-items: flex-start; flex-basis: 100%; gap: 0; overflow: hidden;
+                max-height: 0; opacity: 0; visibility: hidden; transition: max-height .38s ease, opacity .28s ease, visibility .28s;
+            }
+            .nav-links.is-open { max-height: 460px; opacity: 1; visibility: visible; margin-top: .9rem; padding-bottom: .6rem; border-top: 1px solid rgba(151,180,215,.1); }
+            .nav-links li { width: 100%; }
+            .nav-links a { display: block; width: 100%; padding: .95rem .2rem; font-size: 1rem; border-bottom: 1px solid rgba(151,180,215,.07); }
+            .nav-links a::after { display: none; }
+            .hero { grid-template-columns: 1fr; padding-top: 8.5rem; gap: 3.5rem; min-height: 0; }
+            .journey-console { justify-self: start; max-width: 680px; }
+            .panel-grid, .contact-container { grid-template-columns: 1fr; }
+            .modules { grid-template-columns: 1fr; }
+            .modules > h3 { max-width: none; }
+            .director { grid-template-columns: 200px 1fr; }
+            .creds { grid-template-columns: repeat(2, 1fr); gap: 1rem 0; }
+            .creds div:nth-child(3) { border-left: 0; padding-left: 0; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: .55rem 1.1rem; }
+            .logo-text { font-size: 1.25rem; }
+            section { padding: 5rem 1.25rem; }
+            .hero { padding: 7.8rem 1.25rem 4.5rem; }
+            .hero h1 { font-size: clamp(2.6rem, 11vw, 3.4rem); }
+            .hero-lede { font-size: 1rem; }
+            .hero-stats { grid-template-columns: 1fr; }
+            .hero-stat { padding: .8rem 0; }
+            .hero-stat + .hero-stat { border-left: 0; border-top: 1px solid rgba(151,180,215,.08); padding-left: 0; }
+            .why-grid, .faculty-grid, .stages, .two-col { grid-template-columns: 1fr; }
+            .stage.learn .stage-items { grid-template-columns: 1fr; }
+            .director { grid-template-columns: 1fr; }
+            .director-photo { max-width: 220px; }
+            .journey li { grid-template-columns: 40px 1fr; }
+            .j-dur { grid-column: 2; justify-self: start; }
+            .sessions li { grid-template-columns: 1fr; gap: .35rem; }
+            .kind { justify-self: start; }
+        }
+        @media (max-width: 520px) {
+            .journey-console { padding: 1.1rem; border-radius: 20px; }
+            .console-brand small { display: none; }
+            .creds { grid-template-columns: 1fr; }
+            .creds div + div { border-left: 0; padding-left: 0; }
+            .contact-form-wrapper { padding: 1.25rem; }
+            .hero-ctas .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo" aria-label="NaviMod home">
+            <img src="navimod-logo.png" alt="NaviMod">
+            <span class="logo-text">NaviMod</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#institutions">For Institutions</a></li>
+            <li><a href="#faculty">Program Director</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="section-tag">NaviMod Executive Programs</span>
+            <h1>Agentic AI in Financial Services<span>From strategy and governance to working agents</span></h1>
+            <p class="hero-lede">
+                Executive programs, hands-on workshops and corporate AI labs that take banks, asset managers and financial institutions
+                from AI strategy to working agents, taught by the team that <strong>builds and runs agentic AI systems in finance</strong>.
+            </p>
+            <div class="hero-ctas">
+                <a href="#institutions" class="btn btn-primary">Programs for institutions</a>
+                <a href="#contact" class="btn btn-ghost">Discuss your AI use case</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>2,500+</strong><span>Professionals trained in executive programs led by our program director</span></div>
+                <div class="hero-stat"><strong>10+ years</strong><span>Of research in AI, quantitative finance and financial analytics</span></div>
+                <div class="hero-stat"><strong>Istanbul &amp; Miami</strong><span>Programs available in both regions and in-house globally</span></div>
+            </div>
+        </div>
+
+        <aside class="journey-console" aria-label="Program journey for institutions">
+            <div class="console-head">
+                <div class="console-brand">Program Journey <small>for institutions</small></div>
+                <span class="console-note">From briefing to project</span>
+            </div>
+            <ol class="journey">
+                <li class="learn">
+                    <span class="j-dot">1</span>
+                    <div><span class="j-stage">Learn</span><span class="j-name">Executive Briefing</span><span class="j-out">Leadership direction on agentic AI</span></div>
+                    <span class="j-dur">90 minutes</span>
+                </li>
+                <li class="learn">
+                    <span class="j-dot">2</span>
+                    <div><span class="j-stage">Learn</span><span class="j-name">Executive Program</span><span class="j-out">Prioritized agentic use cases and a transformation roadmap</span></div>
+                    <span class="j-dur">2 days</span>
+                </li>
+                <li class="build">
+                    <span class="j-dot">3</span>
+                    <div><span class="j-stage">Build</span><span class="j-name">Hands-on Workshop</span><span class="j-out">Working agents and a use-case prototype</span></div>
+                    <span class="j-dur">3 days</span>
+                </li>
+                <li class="scale">
+                    <span class="j-dot">4</span>
+                    <div><span class="j-stage">Scale</span><span class="j-name">Corporate AI Lab</span><span class="j-out">A measured agent proof of concept on your own data</span></div>
+                    <span class="j-dur">10–12 weeks</span>
+                </li>
+            </ol>
+            <div class="console-foot">
+                <span>Start at any stage. Each one prepares the next.</span>
+                <a href="#contact">Discuss your use case</a>
+            </div>
+        </aside>
+    </section>
+
+    <!-- ================= APPROACH ================= -->
+    <section id="approach">
+        <div class="wrap">
+            <div class="section-header">
+                <span class="section-tag">Why NaviMod</span>
+                <h2 class="section-title">Taught by people who build these systems</h2>
+                <p class="section-desc">Most AI programs explain the technology from a distance. Ours come from a team that designs, deploys and governs agentic AI systems for financial institutions every day.</p>
+            </div>
+            <div class="why-grid">
+                <article class="card why-card">
+                    <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                    <h3>Live systems, not slides</h3>
+                    <p>Sessions include live demonstrations of agentic investment and risk systems running in production at NaviMod.</p>
+                </article>
+                <article class="card why-card">
+                    <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.42A12 12 0 0112 20.06a12 12 0 01-6.16-9.48L12 14z"/></svg></div>
+                    <h3>Academic depth</h3>
+                    <p>Rooted in a university spin-off from Istanbul Technical University, with published research in machine learning, financial engineering and multi-agent systems.</p>
+                </article>
+                <article class="card why-card">
+                    <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V10m4 11V10m6 11V10m4 11V10M2 10l10-6 10 6"/></svg></div>
+                    <h3>Institutional experience</h3>
+                    <p>Built from work with clearing houses, portfolio managers, investment firms and banks on AI, analytics and trading systems.</p>
+                </article>
+                <article class="card why-card">
+                    <div class="why-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                    <h3>From learning to delivery</h3>
+                    <p>Every program ends with a concrete next step, and the same team can take your institution from prototype to production.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INSTITUTIONS ================= -->
+    <section id="institutions">
+        <div class="wrap">
+            <div class="section-header">
+                <span class="section-tag">For Institutions</span>
+                <h2 class="section-title">From first briefing to working agents</h2>
+                <p class="section-desc">Agents change who does the work, who decides and who is accountable, so the transformation is as much organizational as technical. Four in-house programs take your institution through it as one path: leadership sets the direction, teams prove what works, and a joint lab turns it into a real system.</p>
+            </div>
+
+            <div class="stages">
+                <article class="card stage learn">
+                    <div class="stage-head"><b>1</b><h3>Learn</h3></div>
+                    <p>Build shared understanding at the top: what agentic AI changes in finance, where it creates value, and what the institution should do next.</p>
+                    <div class="stage-items">
+                        <button type="button" class="stage-item" data-open-tab="tab-board">
+                            <strong>Executive Briefing</strong>
+                            <span>For boards, CEOs and executive committees</span>
+                            <em>90 minutes</em>
+                        </button>
+                        <button type="button" class="stage-item" data-open-tab="tab-exec">
+                            <strong>Executive Program</strong>
+                            <span>For C-suite, EVPs and heads of strategy, digital, investment and product</span>
+                            <em>2 days</em>
+                        </button>
+                    </div>
+                </article>
+                <article class="card stage build">
+                    <div class="stage-head"><b>2</b><h3>Build</h3></div>
+                    <p>Prove feasibility with working agents built with your teams.</p>
+                    <div class="stage-items">
+                        <button type="button" class="stage-item" data-open-tab="tab-workshop">
+                            <strong>Hands-on Workshop</strong>
+                            <span>For business, technology and risk teams</span>
+                            <em>3 days</em>
+                        </button>
+                    </div>
+                </article>
+                <article class="card stage scale">
+                    <div class="stage-head"><b>3</b><h3>Scale</h3></div>
+                    <p>Validate the use case on your data, measure the results and build the business case.</p>
+                    <div class="stage-items">
+                        <button type="button" class="stage-item" data-open-tab="tab-lab">
+                            <strong>Corporate AI Lab</strong>
+                            <span>Joint NaviMod and client team, proof of concept to pilot plan</span>
+                            <em>10–12 weeks</em>
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <p class="journey-line">
+                <b class="l">Executive Briefing</b> opens the conversation. The <b class="l">Executive Program</b> identifies the opportunities.
+                The <b class="b">Hands-on Workshop</b> proves feasibility. The <b class="s">Corporate AI Lab</b> turns the opportunity into a real project.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= PROGRAM DETAILS ================= -->
+    <section id="programs" aria-label="Program details">
+        <div class="wrap">
+            <div class="tabs" role="tablist" aria-label="Institutional programs">
+                <button class="tab learn" role="tab" id="tab-board" aria-controls="panel-board" aria-selected="true"><i></i>Executive Briefing</button>
+                <button class="tab learn" role="tab" id="tab-exec" aria-controls="panel-exec" aria-selected="false" tabindex="-1"><i></i>Executive Program</button>
+                <button class="tab build" role="tab" id="tab-workshop" aria-controls="panel-workshop" aria-selected="false" tabindex="-1"><i></i>Hands-on Workshop</button>
+                <button class="tab scale" role="tab" id="tab-lab" aria-controls="panel-lab" aria-selected="false" tabindex="-1"><i></i>Corporate AI Lab</button>
+            </div>
+
+            <!-- Executive Briefing -->
+            <div class="card panel learn" role="tabpanel" id="panel-board" aria-labelledby="tab-board">
+                <div class="panel-grid">
+                    <div>
+                        <span class="p-stage">Learn</span>
+                        <h3>Agentic AI in Financial Services: Executive Briefing</h3>
+                        <p class="p-intro">A focused 90-minute briefing that equips boards and executive committees to oversee the move to AI and agentic AI with confidence.</p>
+                        <dl class="facts">
+                            <dt>Duration</dt><dd>90 minutes</dd>
+                            <dt>Format</dt><dd>In-house, in person or online</dd>
+                            <dt>For</dt><dd>Boards, CEOs and executive committees</dd>
+                        </dl>
+                        <h4 class="sub">What you take away</h4>
+                        <ul class="ticks">
+                            <li>Five questions to ask about any AI agent: what it sees, who sets its goal, what it decides, when a person steps in, and how it is stopped</li>
+                            <li>Board checklist for overseeing AI and AI agents</li>
+                            <li>A leadership-level view of where the institution stands</li>
+                        </ul>
+                        <div class="next"><b>Next step</b><p>The <button type="button" data-open-tab="tab-exec">Executive Program</button> turns leadership direction into a concrete plan.</p></div>
+                    </div>
+                    <div class="agenda">
+                        <div class="day">
+                            <div class="day-head"><span>Agenda</span><h4>Three short segments and a discussion</h4></div>
+                            <ul class="sessions">
+                                <li><span><b>From GenAI to agentic AI.</b> What changes when AI can act, what is hype, and what it means for competitive position</span><span class="kind work">20 min</span></li>
+                                <li><span><b>Agentic AI in action.</b> A live demonstration of agents running investment and risk workflows</span><span class="kind demo">20 min · Demo</span></li>
+                                <li><span><b>Risk, regulation and board oversight.</b> Accountability when agents act, and whether the institution can still explain and stop what they do</span><span class="kind work">20 min</span></li>
+                                <li><span><b>Discussion.</b> Where does our institution stand, and what should we do first?</span><span class="kind work">30 min</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Program -->
+            <div class="card panel learn" role="tabpanel" id="panel-exec" aria-labelledby="tab-exec" hidden>
+                <div class="panel-grid">
+                    <div>
+                        <span class="p-stage">Learn</span>
+                        <h3>Agentic AI in Financial Services: Executive Program</h3>
+                        <p class="p-intro">A strategic program on how agentic AI is reshaping financial services, and how your institution should lead the transformation.</p>
+                        <dl class="facts">
+                            <dt>Duration</dt><dd>2 days</dd>
+                            <dt>Format</dt><dd>In-house for your leadership team</dd>
+                            <dt>For</dt><dd>C-suite, EVPs and heads of strategy, digital banking, investment, operations, risk and technology</dd>
+                        </dl>
+                        <h4 class="sub">Before and after</h4>
+                        <ul class="ticks">
+                            <li><b>Before:</b> Agentic maturity assessment, from monitoring and suggestions to supervised and autonomous execution</li>
+                            <li><b>30 days after:</b> Online Roadmap Review session</li>
+                        </ul>
+                        <h4 class="sub">What you take away</h4>
+                        <ul class="ticks">
+                            <li>Agentic maturity snapshot for your institution</li>
+                            <li>Prioritized portfolio of agentic use cases (value vs. feasibility)</li>
+                            <li>Decision autonomy map: which decisions agents may take, which they recommend, and which stay with people</li>
+                            <li>Strategic roadmap for the agentic transformation</li>
+                        </ul>
+                        <div class="next"><b>Next step</b><p>The <button type="button" data-open-tab="tab-workshop">Hands-on Workshop</button> prototypes your highest-priority use case.</p></div>
+                    </div>
+                    <div class="agenda">
+                        <div class="day">
+                            <div class="day-head"><span>Day 1</span><h4>Understanding the shift</h4></div>
+                            <ul class="sessions">
+                                <li><span>From GenAI to agentic AI: what changes when AI can act</span></li>
+                                <li><span>How agents are reshaping banking, payments and investment management</span></li>
+                                <li><span>Agentic systems in action: investment research and risk workflows</span><span class="kind demo">Live demo</span></li>
+                                <li><span>Agentic use cases across front, middle and back office</span></li>
+                            </ul>
+                        </div>
+                        <div class="day">
+                            <div class="day-head"><span>Day 2</span><h4>Leading the transformation</h4></div>
+                            <ul class="sessions">
+                                <li><span>The agentic operating model: how roles shift from doing the work to setting goals, limits and exceptions, and who owns an outcome end to end</span></li>
+                                <li><span>Earning autonomy: the evidence, controls and governance that let agent authority widen safely</span></li>
+                                <li><span>Build vs. buy vs. partner: strategic choices for financial institutions</span></li>
+                                <li><span>Use-case prioritization and transformation roadmap</span><span class="kind work">Workshop</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workshop -->
+            <div class="card panel build" role="tabpanel" id="panel-workshop" aria-labelledby="tab-workshop" hidden>
+                <div class="panel-grid">
+                    <div>
+                        <span class="p-stage">Build</span>
+                        <h3>Agentic AI in Financial Services: Hands-on Workshop</h3>
+                        <p class="p-intro">Your teams build a financial agent, connect agents into a governed workflow, then prototype a use case from your own institution.</p>
+                        <dl class="facts">
+                            <dt>Duration</dt><dd>3 days</dd>
+                            <dt>Format</dt><dd>In-house, 12–24 participants</dd>
+                            <dt>For</dt><dd>Mixed teams from business, technology and risk</dd>
+                            <dt>Prerequisites</dt><dd>None. No coding required</dd>
+                            <dt>Environment</dt><dd>A ready-to-use NaviMod sandbox. No installation and no internal data needed</dd>
+                        </dl>
+                        <h4 class="sub">What you take away</h4>
+                        <ul class="ticks">
+                            <li>Two guided financial agents</li>
+                            <li>A multi-agent workflow with human approval</li>
+                            <li>A prototype for your own use case</li>
+                            <li>Feasibility and Lab Readiness Report</li>
+                        </ul>
+                        <div class="next"><b>Next step</b><p>The workshop shows the concept works. The <button type="button" data-open-tab="tab-lab">Corporate AI Lab</button> validates it on your institution's data and infrastructure.</p></div>
+                    </div>
+                    <div class="agenda">
+                        <div class="day">
+                            <div class="day-head"><span>Day 1</span><h4>Your first financial agents</h4></div>
+                            <ul class="sessions">
+                                <li><span>Designing a governable agent: its goal, the context it works from, the tools and permissions it holds, and when it must stop and escalate</span></li>
+                                <li><span><b>Financial Research Agent.</b> Turns news, filings and market data into an investment brief</span><span class="kind lab">Lab 1</span></li>
+                                <li><span><b>Risk Monitoring Agent.</b> Tracks volatility regimes and generates alerts</span><span class="kind lab">Lab 2</span></li>
+                            </ul>
+                        </div>
+                        <div class="day">
+                            <div class="day-head"><span>Day 2</span><h4>From agents to a governed workflow</h4></div>
+                            <ul class="sessions">
+                                <li><span>When is one agent not enough? Deciding whether splitting the work is worth the coordination cost</span></li>
+                                <li><span><b>Multi-agent workflow.</b> Research and risk agents combined with clear handoffs, stopping rules and a human approval step</span><span class="kind lab">Lab 3</span></li>
+                                                                <li><span>How do you know it works? Testing, audit trails and human-in-the-loop controls</span><span class="kind work">Workshop</span></li>
+                            </ul>
+                        </div>
+                        <div class="day">
+                            <div class="day-head"><span>Day 3</span><h4>Bring your own use case</h4></div>
+                            <ul class="sessions">
+                                <li><span>Framing your institution's use case with the NaviMod team</span><span class="kind work">Workshop</span></li>
+                                <li><span>Building a working prototype on public, synthetic or sandbox data</span><span class="kind lab">Build</span></li>
+                                <li><span>Demo Day: presentation to your executive sponsor</span></li>
+                                <li><span>Lab readiness assessment</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporate AI Lab -->
+            <div class="card panel scale" role="tabpanel" id="panel-lab" aria-labelledby="tab-lab" hidden>
+                <div class="panel-grid">
+                    <div>
+                        <span class="p-stage">Scale</span>
+                        <h3>Corporate AI Lab</h3>
+                        <p class="p-intro">A structured engagement that turns a validated use case into a working agent proof of concept, a business case and a production roadmap.</p>
+                        <dl class="facts">
+                            <dt>Duration</dt><dd>10–12 weeks</dd>
+                            <dt>Format</dt><dd>Joint NaviMod and client team</dd>
+                            <dt>Where</dt><dd>In your environment, in your cloud or on-premises, with the models your policies allow</dd>
+                            <dt>Data</dt><dd>Stays under your control, under NDA and your data governance policies</dd>
+                        </dl>
+                        <h4 class="sub">What you take away</h4>
+                        <ul class="ticks">
+                            <li>A working proof of concept on your own data</li>
+                            <li>Before-and-after results against a measured baseline</li>
+                            <li>Evaluation and governance pack covering authority and accountability, audit trail, verification and stop controls, to support your internal model risk and AI governance review</li>
+                            <li>Business case, production architecture and pilot plan</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="day">
+                            <div class="day-head"><span>How it works</span><h4>Measured results, not just a demo</h4></div>
+                            <ol class="phases">
+                                <li><div><h4>Discover</h4><p>Use-case inventory, data and infrastructure assessment, and a baseline of how the process runs today</p></div><time>2 weeks</time></li>
+                                <li><div><h4>Design</h4><p>Use-case selection, solution architecture, success KPIs and executive sponsor alignment</p></div><time>1 week</time></li>
+                                <li><div><h4>Build</h4><p>Iterative development on institutional data, starting with one agent at a supervised level of autonomy</p></div><time>4–5 weeks</time></li>
+                                <li><div><h4>Evaluate</h4><p>Testing against historical and synthetic cases for accuracy, groundedness, policy compliance and cost: the evidence needed before autonomy widens</p></div><time>2 weeks</time></li>
+                                <li><div><h4>Demo Day</h4><p>Results, business case and pilot recommendation presented to the executive committee</p></div><time>1–2 weeks</time></li>
+                                <li><div><h4>Scale</h4><p>Pilot and production roadmap, widening agent authority step by step as evidence builds</p></div><time>Next</time></li>
+                            </ol>
+                        </div>
+                        <div class="two-col">
+                            <div class="mini">
+                                <h4 class="sub">Team</h4>
+                                <ul class="ticks">
+                                    <li><b>NaviMod:</b> AI architect, data scientist, software engineer</li>
+                                    <li><b>Your institution:</b> executive sponsor, product owner, domain experts, IT and data</li>
+                                </ul>
+                            </div>
+                            <div class="mini">
+                                <h4 class="sub">Example lab themes</h4>
+                                <ul class="ticks">
+                                    <li>Investment research agent</li>
+                                    <li>Portfolio risk monitoring and regime detection agent</li>
+                                    <li>Credit memo and credit analysis agent</li>
+                                    <li>Compliance and document review agent</li>
+                                    <li>Wealth advisory assistant</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card modules">
+                <h3>Specialist modules<small>Available on request, in-house</small></h3>
+                <div class="module">
+                    <strong>AI-Driven Investment &amp; Quantitative Finance</strong>
+                    <span>1–2 days. ML-based prediction and alpha signals, portfolio optimization, regime detection and backtesting pitfalls.</span>
+                </div>
+                <div class="module">
+                    <strong>AI Risk, Regulation &amp; Governance</strong>
+                    <span>1–2 days. Model risk for AI agents, explainability, human oversight, the EU AI Act and regional regulation, AI governance operating models.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FACULTY ================= -->
+    <section id="faculty">
+        <div class="wrap">
+            <div class="section-header">
+                <span class="section-tag">Program Leadership</span>
+                <h2 class="section-title">Program Director</h2>
+                <p class="section-desc">The programs are designed and led by NaviMod's founder, with guest faculty from banking and FinTech joining selected sessions.</p>
+            </div>
+
+            <article class="card director">
+                <div class="director-photo"><img src="alp.jpg" alt="Prof. Dr. Alp Ustundag"></div>
+                <div>
+                    <span class="director-role">Program Director</span>
+                    <h3>Prof. Dr. Alp Ustundag</h3>
+                    <p class="director-sub">Founder &amp; CEO, NaviMod Financial Analytics Solutions</p>
+                    <p class="director-bio">
+                        Alp Ustundag founded NaviMod as a university spin-off to turn research in machine learning, optimization and financial analytics
+                        into production systems for banks, asset managers and market infrastructure institutions. At Istanbul Technical University he served
+                        as Professor of Industrial Engineering and as founding chair of the Department of Data Engineering and Business Analytics, where he
+                        established its M.Sc. in Big Data and Business Analytics. He founded and directed ITU's Big Data and Business Analytics and
+                        Data Science certificate programs for individual professionals and corporate cohorts. His advisory and systems work spans
+                        Takasbank, Ziraat Portfolio, Ak Investment, Akbank and Deutsche Bank Türkiye.
+                    </p>
+                    <div class="creds">
+                        <div><strong>2,500+</strong><span>Participants in executive programs he designed and led</span></div>
+                        <div><strong>300+</strong><span>Graduates of the M.Sc. program he founded</span></div>
+                        <div><strong>4,400+</strong><span>Citations across 31 refereed journal articles</span></div>
+                        <div><strong>20+</strong><span>Funded research projects</span></div>
+                    </div>
+                    <p class="director-bio" style="margin-bottom:1.3rem">Author of <em>The Agentic AI Company: How AI and Multi-Agent Systems Are Transforming Business</em> (Springer, forthcoming) and editor of <em>Business Analytics for Professionals</em> and <em>Industry 4.0: Managing the Digital Transformation</em> (Springer). Ph.D. in Industrial Engineering, ITU; MBA, Boğaziçi University.</p>
+                    <div class="director-links">
+                        <a href="https://www.linkedin.com/in/alpustundag/" target="_blank" rel="noopener" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                            Connect on LinkedIn
+                        </a>
+                        <a href="https://alpustundag.com" target="_blank" rel="noopener" class="btn btn-ghost">alpustundag.com</a>
+                    </div>
+                </div>
+            </article>
+
+                    </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq">
+        <div class="wrap">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Common questions</h2>
+            </div>
+            <div class="faq">
+                <details>
+                    <summary>Which program should my institution start with?</summary>
+                    <p>Most institutions start with the Executive Briefing or the Executive Program to agree on direction. Teams that already have a clear use case can start directly with the Hands-on Workshop. Every program can be booked on its own.</p>
+                </details>
+                <details>
+                    <summary>Do we need to share internal data for the Hands-on Workshop?</summary>
+                    <p>No. The workshop runs in a NaviMod sandbox on public, synthetic or sample data. Your teams bring the use case, not the data. Working with institutional data happens only in the Corporate AI Lab, under NDA and your governance policies.</p>
+                </details>
+                <details>
+                    <summary>Do participants need technical or coding skills?</summary>
+                    <p>No. All programs are designed for executives and mixed business, technology and risk teams. The hands-on labs use a guided, no-code environment.</p>
+                </details>
+                <details>
+                    <summary>Can the content be adapted to our institution or region?</summary>
+                    <p>Yes. In-house programs are tailored with use cases, regulation and examples relevant to your business line and market, whether you operate in Türkiye, the United States or elsewhere.</p>
+                </details>
+                <details>
+                    <summary>In which language are the programs delivered?</summary>
+                    <p>Programs are delivered in English or Turkish, depending on the cohort or the institution.</p>
+                </details>
+                <details>
+                    <summary>Do you offer programs for individuals?</summary>
+                    <p>We are preparing a six-day Executive Certificate Program, FinTech in the AI Age, for professionals who join on their own behalf. Select it in the form below to join the interest list and receive the program brochure.</p>
+                </details>
+                <details>
+                    <summary>Where does the Corporate AI Lab run?</summary>
+                    <p>In your environment, in your cloud or on-premises, with the models your policies allow. Institutional data stays under your control throughout the engagement.</p>
+                </details>
+                <details>
+                    <summary>How do we get started?</summary>
+                    <p>Send an inquiry below. We will reply with the program outline, a proposed format for your institution and available dates.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span class="section-tag">Program Inquiries</span>
+                <h2 class="section-title">Discuss agentic AI for your institution</h2>
+                <p class="contact-lede">Tell us what you are looking for. We will reply with the program outline and the next available dates.</p>
+                <div class="contact-block">
+                    <strong>Program Director</strong>
+                    <span>Prof. Dr. Alp Ustundag · <a href="https://www.linkedin.com/in/alpustundag/" target="_blank" rel="noopener">LinkedIn</a></span>
+                </div>
+                <div class="contact-block">
+                    <strong>Email</strong>
+                    <a href="mailto:info@navimod.com">info@navimod.com</a>
+                </div>
+                <div class="contact-block">
+                    <strong>Locations</strong>
+                    <span>Miami, Florida, USA<br>ITU Ayazaga Campus, ARI Teknokent, Istanbul, Türkiye</span>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" id="inquiryForm" action="https://formspree.io/f/mldqejjl" method="POST">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="_subject" value="Executive Programs inquiry">
+                    <input type="hidden" name="source" value="executive-programs">
+                    <input type="text" name="fullname" placeholder="Full name" aria-label="Full name" required>
+                    <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+                    <input type="text" name="company" placeholder="Institution" aria-label="Institution">
+                    <input type="text" name="role" placeholder="Role" aria-label="Role" required>
+                    <select name="program" id="programSelect" aria-label="Program of interest" required>
+                        <option value="" disabled selected>Select a program</option>
+                        <optgroup label="For institutions">
+                            <option value="executive_briefing">Executive Briefing</option>
+                            <option value="executive_program">Executive Program</option>
+                            <option value="hands_on_workshop">Hands-on Workshop</option>
+                            <option value="corporate_ai_lab">Corporate AI Lab</option>
+                            <option value="specialist_modules">Specialist modules</option>
+                        </optgroup>
+                        <option value="executive_certificate">Executive Certificate for individuals: interest list</option>
+                        <option value="not_sure">Not sure yet</option>
+                    </select>
+                    <textarea name="message" rows="4" placeholder="What would you like to achieve? (optional)" aria-label="Message"></textarea>
+                    <button type="submit">Send inquiry</button>
+                    <p class="form-note">We use your details only to respond to this inquiry.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo"><img src="navimod-logo.png" alt="NaviMod"></div>
+        <nav class="foot-links" aria-label="Footer">
+            <a href="index.html">navimod.com</a>
+            <a href="#institutions">For Institutions</a>
+            <a href="https://www.linkedin.com/company/navimod" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+        <div>&copy; <span id="current-year"></span> NaviMod Financial Analytics Solutions. All rights reserved.</div>
+    </footer>
+
+    <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+        <div class="success-content">
+            <div class="success-icon"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <h3 id="successTitle">Inquiry sent</h3>
+            <p>Thank you. We will reply within two business days with the program outline and next steps.</p>
+            <button type="button" class="btn btn-ghost" id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Navbar scroll state
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('nav-scrolled', window.scrollY > 50));
+
+        // Mobile menu (same behavior as navimod.com)
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const closeMenu = () => {
+            navLinks.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Open menu');
+        };
+        navToggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeMenu(); });
+
+        // Generic accessible tabs
+        function setupTabs(tabSelector) {
+            const tabs = Array.from(document.querySelectorAll(tabSelector));
+            const select = (tab, focus) => {
+                tabs.forEach(t => {
+                    const on = t === tab;
+                    t.setAttribute('aria-selected', on ? 'true' : 'false');
+                    t.tabIndex = on ? 0 : -1;
+                    const panel = document.getElementById(t.getAttribute('aria-controls'));
+                    panel.hidden = !on;
+                    panel.classList.toggle('is-shown', on);
+                });
+                if (focus) tab.focus();
+            };
+            tabs.forEach((tab, i) => {
+                tab.addEventListener('click', () => select(tab));
+                tab.addEventListener('keydown', e => {
+                    let n = null;
+                    if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+                    if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+                    if (e.key === 'Home') n = tabs[0];
+                    if (e.key === 'End') n = tabs[tabs.length - 1];
+                    if (n) { e.preventDefault(); select(n, true); }
+                });
+            });
+            return select;
+        }
+        const selectProgram = setupTabs('#programs .tab');
+
+        // Stage cards and "next step" links open the matching program tab
+        document.querySelectorAll('[data-open-tab]').forEach(el => {
+            el.addEventListener('click', () => {
+                const tab = document.getElementById(el.dataset.openTab);
+                selectProgram(tab);
+                document.getElementById('programs').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Preselect program in the inquiry form
+        const programSelect = document.getElementById('programSelect');
+        const tabToProgram = { 'tab-board': 'executive_briefing', 'tab-exec': 'executive_program', 'tab-workshop': 'hands_on_workshop', 'tab-lab': 'corporate_ai_lab' };
+        document.querySelectorAll('[data-program]').forEach(el => {
+            el.addEventListener('click', () => { programSelect.value = el.dataset.program; });
+        });
+        let suggested = '';
+        document.querySelectorAll('#programs .tab').forEach(t => {
+            t.addEventListener('click', () => { suggested = tabToProgram[t.id]; });
+        });
+        document.querySelectorAll('a[href="#contact"]:not([data-program])').forEach(a => {
+            a.addEventListener('click', () => { if (!programSelect.value && suggested) programSelect.value = suggested; });
+        });
+
+        // Inquiry form (Formspree, same endpoint as navimod.com)
+        const form = document.getElementById('inquiryForm');
+        const modal = document.getElementById('successModal');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const data = new FormData(form);
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+            fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+                .then(res => {
+                    if (res.ok) {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'generate_lead', { form_name: 'program_inquiry', program: data.get('program') || 'unspecified' });
+                        }
+                        form.reset();
+                        modal.classList.add('show');
+                        document.getElementById('closeModal').focus();
+                    } else {
+                        return res.json().then(d => {
+                            alert(d && d.errors ? d.errors.map(x => x.message).join(', ') : 'The inquiry could not be sent. Please email info@navimod.com.');
+                        });
+                    }
+                })
+                .catch(() => alert('The inquiry could not be sent. Check your connection or email info@navimod.com.'))
+                .finally(() => { submitBtn.disabled = false; submitBtn.textContent = 'Send inquiry'; });
+        });
+        const hideModal = () => modal.classList.remove('show');
+        document.getElementById('closeModal').addEventListener('click', hideModal);
+        modal.addEventListener('click', e => { if (e.target === modal) hideModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { hideModal(); closeMenu(); } });
+    </script>
+</body>
+</html>
